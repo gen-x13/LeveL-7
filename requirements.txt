@@ -1,0 +1,6 @@
+pandas 
+kaleido==0.2.1
+streamlit 
+plotly
+scikit-learn
+streamlit-option-menu
