@@ -1,8 +1,8 @@
-pandas 
+pandas==2.0.3
+plotly==5.15.0 
 Pillow
 kaleido==0.2.1
 streamlit 
-plotly
 seaborn
 scikit-learn
 streamlit-option-menu
