@@ -1,0 +1,10 @@
+pandas 
+Pillow
+kaleido==0.2.1
+streamlit 
+plotly
+seaborn
+scikit-learn
+streamlit-option-menu
+streamlit-extras
+streamlit-browser-language
