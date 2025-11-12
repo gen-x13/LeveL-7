@@ -6,6 +6,7 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import seaborn as sns
+import os
 
 # Security preventing any reading problem
 current_dir = os.path.dirname(__file__)
@@ -583,3 +584,4 @@ st.plotly_chart(fig)
 
 
 """
+
