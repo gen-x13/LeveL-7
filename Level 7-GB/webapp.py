@@ -51,10 +51,16 @@ selected=option_menu(
 # ------------------------------- EDA of the data --------------------------- #
 
 # Security preventing any reading problem
+current_dir = os.path.dirname(__file__)
+
+# Construire le chemin absolu vers le fichier
+data_path = os.path.join(current_dir, "data", "earthquake_data_tsunami.csv")
+
+# Lecture sécurisée
 try:
-    data = pd.read_csv("data/earthquake_data_tsunami.csv")
+    data = pd.read_csv(data_path)
 except Exception as e:
-    data = pd.read_excel("data/earthquake_data_tsunami.csv")
+    data = pd.read_excel(data_path)
     print(f"{e}")
 
 nb_na = (data.isnull().sum().sum() / data.size) * 100
@@ -194,6 +200,7 @@ elif selected == "Early Warning":
 
 # en utilisant une API ! 
 # Chacun pourrait voir où il se trouve et s'il y a un risque !
+
 
 
 
