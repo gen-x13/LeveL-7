@@ -8,3 +8,5 @@ scikit-learn
 streamlit-option-menu
 streamlit-extras
 streamlit-browser-language
+os
+cartopy
