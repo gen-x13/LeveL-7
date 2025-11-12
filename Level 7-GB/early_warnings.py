@@ -7,10 +7,16 @@ import seaborn as sns
 # LOF
 
 # Security preventing any reading problem
+current_dir = os.path.dirname(__file__)
+
+# Construire le chemin absolu vers le fichier
+data_path = os.path.join(current_dir, "data", "earthquake_data_tsunami.csv")
+
+# Lecture sécurisée
 try:
-    data = pd.read_csv("data/earthquake_data_tsunami.csv")
+    data = pd.read_csv(data_path)
 except Exception as e:
-    data = pd.read_excel("data/earthquake_data_tsunami.csv")
+    data = pd.read_excel(data_path)
     print(f"{e}")
 
 # Visualize the dataset
@@ -654,6 +660,7 @@ True Pos = 0, 0.00%
 Everything's good !
 
 """
+
 
 
 
