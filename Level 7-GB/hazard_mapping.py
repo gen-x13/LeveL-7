@@ -8,10 +8,16 @@ import matplotlib.animation as animation
 import seaborn as sns
 
 # Security preventing any reading problem
+current_dir = os.path.dirname(__file__)
+
+# Construire le chemin absolu vers le fichier
+data_path = os.path.join(current_dir, "data", "earthquake_data_tsunami.csv")
+
+# Lecture sécurisée
 try:
-    data = pd.read_csv("data/earthquake_data_tsunami.csv")
+    data = pd.read_csv(data_path)
 except Exception as e:
-    data = pd.read_excel("data/earthquake_data_tsunami.csv")
+    data = pd.read_excel(data_path)
     print(f"{e}")
 
 # Visualize the dataset
@@ -573,6 +579,7 @@ fig.layout.updatemenus[0].pad.t= 10
 
 st.title('Test')
 st.plotly_chart(fig)
+
 
 
 """
