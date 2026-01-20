@@ -230,7 +230,7 @@ class GeonamesCountriesTxtFileReader(object):
 
 
 # File path
-geonames_df = "data/cities15000.txt"
+geonames_df = "../data/cities15000.txt"
 
 # df reader and transformator
 reader1 = GeonamesCountriesTxtFileReader(geonames_df)
@@ -662,6 +662,7 @@ class TsunamiRiskEW():
             # chaque probabilités + noms du pays/villes grâce au JSON !
             
             return risk_score
+
 
 
 
