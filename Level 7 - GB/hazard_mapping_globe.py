@@ -1,5 +1,5 @@
 # Imports for the project
-import pathlib as Path
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -342,5 +342,6 @@ class HazardMappingAnimation():
             fig.layout.coloraxis.showscale = True 
             fig.layout.sliders[0].pad.t = 10
             fig.layout.updatemenus[0].pad.t= 10   
+
 
 
