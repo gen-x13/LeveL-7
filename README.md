@@ -11,9 +11,11 @@
 - **⏳ Time to complete:** 1/2 months.  
 
 ---
+
 ⚠️ Reminder: This is a beginner-level project : a test, an exploration, a digital sketchbook.         
 ⚠️ Note: This app might take a few seconds to load if it's been inactive — please be patient while it wakes up!    
 ⚠️ Note: The real-time prediction is just an alarm, it's not in any case a real prediction for tsunami.
+
 ---
 
 ### **💭 My thoughts on this project:**  
@@ -68,3 +70,6 @@ This project is licensed under the MIT License — see the [LICENSE](./LICENSE) 
 
 ***Slow Progress beats No Progress***
 *First working draft to perfection.*
+
+> ### Link to the bilingual blog talking about this project (french & english):
+> ### [Blog Tsunami Risk Project | Projet Risque de Tsunami Link](https://ko-fi.com/post/Reinforcement-Learning-Apprentissage-par-renforc-L4L41QHV3T)
