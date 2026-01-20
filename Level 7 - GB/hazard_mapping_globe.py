@@ -8,7 +8,7 @@ import plotly.express as px
 #              Security preventing any reading problem                        #
 
 try:
-    data = pd.read_csv("data/earthquake_data_tsunami.csv")
+    data = pd.read_csv("../data/earthquake_data_tsunami.csv")
 except Exception as e:
     data = pd.read_excel("data/earthquake_data_tsunami.csv")
     print(f"{e}")
@@ -342,3 +342,4 @@ class HazardMappingAnimation():
             fig.layout.coloraxis.showscale = True 
             fig.layout.sliders[0].pad.t = 10
             fig.layout.updatemenus[0].pad.t= 10   
+
