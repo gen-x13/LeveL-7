@@ -13,6 +13,7 @@
 ---
 ⚠️ Reminder: This is a beginner-level project : a test, an exploration, a digital sketchbook.  
 ⚠️ Note: This app might take a few seconds to load if it's been inactive — please be patient while it wakes up!
+
 ⚠️ Note: The real-time prediction is just an alarm, it's not in any case a real prediction for tsunami.
 ---
 
