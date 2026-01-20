@@ -13,7 +13,7 @@ import streamlit as st
 
 # Security preventing any reading problem
 try:
-    data = pd.read_csv("data/earthquake_data_tsunami.csv")
+    data = pd.read_csv("../data/earthquake_data_tsunami.csv")
 except Exception as e:
     data = pd.read_excel("data/earthquake_data_tsunami.csv")
     print(f"{e}")
@@ -662,6 +662,7 @@ class TsunamiRiskEW():
             # chaque probabilités + noms du pays/villes grâce au JSON !
             
             return risk_score
+
 
 
 
