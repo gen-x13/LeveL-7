@@ -7,15 +7,15 @@ Created on Wed Jan 14 06:44:24 2026
 
 # Imports for the project
 import time
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import streamlit as st
 
 # Security preventing any reading problem
 try:
-    data = pd.read_csv("../data/earthquake_data_tsunami.csv")
+    data = pd.read_csv(Path(__file__).parent / "data" / "earthquake_data_tsunami.csv")
 except Exception as e:
-    data = pd.read_excel("data/earthquake_data_tsunami.csv")
     print(f"{e}")
   
     
@@ -230,7 +230,7 @@ class GeonamesCountriesTxtFileReader(object):
 
 
 # File path
-geonames_df = "../data/cities15000.txt"
+geonames_df = Path(__file__).parent / "data" / "cities15000.txt"
 
 # df reader and transformator
 reader1 = GeonamesCountriesTxtFileReader(geonames_df)
@@ -662,6 +662,7 @@ class TsunamiRiskEW():
             # chaque probabilités + noms du pays/villes grâce au JSON !
             
             return risk_score
+
 
 
 
