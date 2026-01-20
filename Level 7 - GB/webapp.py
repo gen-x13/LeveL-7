@@ -46,7 +46,7 @@ selected=option_menu(
 @st.cache_data(show_spinner="Loading dataset...")
 def load_data():
     return pd.read_csv(
-        "data/earthquake_data_tsunami.csv",
+        "../data/earthquake_data_tsunami.csv",
         dtype={
             "latitude": "float32",
             "longitude": "float32",
@@ -365,6 +365,7 @@ elif selected == "Early Warning":
         
     
     st.caption("🏗 It's still under construction, come back in a few days")
+
 
 
 
