@@ -6,7 +6,6 @@
   This project maps, displays data on a dashboard and make predicitons with real-time data.  
   There is only version available:
   - 🇬🇧 **English version**: Includes English commentary (`-en`).
-  Since my project proposes a French and English analysis report.
 
 - **🛠 Tech Stack:** Python, Pandas, Streamlit, Scikit-learn, PIL.  
 - **⏳ Time to complete:** 1/2 months.  
