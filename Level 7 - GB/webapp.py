@@ -14,6 +14,9 @@ import random
 # Pandas
 import pandas as pd
 
+# Path For Data
+from pathlib import Path
+
 # OS
 import os
 
@@ -40,13 +43,13 @@ selected=option_menu(
         orientation="horizontal"
 )   
 
-# ------------------------------- EDA of the data --------------------------- #
+# ------------------------------- Loading data --------------------------- #
 
 # Security preventing any reading problem and any cache data problem
 @st.cache_data(show_spinner="Loading dataset...")
 def load_data():
     return pd.read_csv(
-        "../data/earthquake_data_tsunami.csv",
+        Path(__file__).parent / "data" / "earthquake_data_tsunami.csv",
         dtype={
             "latitude": "float32",
             "longitude": "float32",
@@ -365,6 +368,7 @@ elif selected == "Early Warning":
         
     
     st.caption("🏗 It's still under construction, come back in a few days")
+
 
 
 
