@@ -53,7 +53,7 @@ I’m planning a future remake with:
 ### **📦 Requirements**  
 Before running the project, make sure you have the following libraries installed:  
 ```bash
-pip install pandas streamlit plotly scikit-learn PIL
+pip install pandas streamlit plotly scikit-learn pillow
 
 ```
 ---
