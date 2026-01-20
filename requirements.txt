@@ -6,3 +6,4 @@ scikit-learn
 streamlit-option-menu
 streamlit_extras
 pillow
+pathlib
