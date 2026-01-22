@@ -236,13 +236,6 @@ geonames_df = Path(__file__).parent / "data" / "cities15000.txt"
 reader1 = GeonamesCountriesTxtFileReader(geonames_df)
 df = reader1.read_csv()
 
-# Checking the size of the data
-st.write(
-    df.memory_usage(deep=True).sum() / 1e6,
-    "MB"
-)
-
-
 @st.cache_data
 # Function to found the nearest city, country or state based on lat/lon data
 def nearest_city(lat, lon, _df):
@@ -662,6 +655,7 @@ class TsunamiRiskEW():
             # chaque probabilités + noms du pays/villes grâce au JSON !
             
             return risk_score
+
 
 
 
