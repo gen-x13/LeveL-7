@@ -72,4 +72,4 @@ This project is licensed under the MIT License — see the [LICENSE](./LICENSE) 
 *First working draft to perfection.*
 
 > ### Link to the bilingual blog talking about this project (french & english):
-> ### [Blog Tsunami Risk Project | Projet Risque de Tsunami Link](https://ko-fi.com/post/Reinforcement-Learning-Apprentissage-par-renforc-L4L41QHV3T)
+> ### [Blog Tsunami Risk Project | Projet Risque de Tsunami Link](https://ko-fi.com/post/Tsunami-Risk-Project-Projet-Risque-de-Tsunami-W7W21SAPQQ)
