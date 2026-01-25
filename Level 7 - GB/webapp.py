@@ -2,7 +2,7 @@
 """
 Created on Tue Nov 11 2025
 
-@author: #gencode 
+@author: #genxcode 
 """
 
 # PIL
@@ -41,7 +41,18 @@ selected=option_menu(
         menu_icon="cast",
         default_index=0,
         orientation="horizontal"
-)   
+) 
+
+# ----------------------- Background ------------------------------------ #
+
+# Get the absolute path of the current folder (where main.py is located)
+base_path = Path(__file__).parent / "file" / "css.css"
+
+# CSS Background
+css_path = Path(__file__).parent / "file" / "css.css"
+with open(css_path) as f:
+    css = f.read()
+st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 
 # ------------------------------- Loading data --------------------------- #
 
@@ -368,6 +379,7 @@ elif selected == "Early Warning":
         
     
     st.caption("🏗 It's still under construction, come back in a few days")
+
 
 
 
