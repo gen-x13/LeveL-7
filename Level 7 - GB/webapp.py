@@ -45,9 +45,6 @@ selected=option_menu(
 
 # ----------------------- Background ------------------------------------ #
 
-# Get the absolute path of the current folder (where main.py is located)
-base_path = Path(__file__).parent / "file" / "css.css"
-
 # CSS Background
 css_path = Path(__file__).parent / "file" / "css.css"
 with open(css_path) as f:
@@ -379,6 +376,7 @@ elif selected == "Early Warning":
         
     
     st.caption("🏗 It's still under construction, come back in a few days")
+
 
 
 
