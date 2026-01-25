@@ -46,7 +46,7 @@ selected=option_menu(
 # ----------------------- Background ------------------------------------ #
 
 # CSS Background
-css_path = Path(__file__).parent / "file" / "css.css"
+css_path = Path(__file__).parent / "files" / "css.css"
 with open(css_path) as f:
     css = f.read()
 st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
@@ -376,6 +376,7 @@ elif selected == "Early Warning":
         
     
     st.caption("🏗 It's still under construction, come back in a few days")
+
 
 
 
