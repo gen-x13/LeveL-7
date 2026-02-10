@@ -50,7 +50,7 @@ selected = option_menu(
             "font-size": "15px",
             "text-align": "center",
             "color": "#dbeafe",
-            "border-radius": "8px",
+            "border-radius": "10px",
             "margin": "0 6px",
             "--hover-color": "rgba(30, 58, 138, 0.6)",
             "transition": "all 0.2s ease",
@@ -59,7 +59,7 @@ selected = option_menu(
             "background-color": "#38bdf8",
             "color": "#020617",
             "font-weight": "600",
-            "border-radius": "8px",
+            "border-radius": "10px",
         },
     },
 )
@@ -398,6 +398,7 @@ elif selected == "Early Warning":
         
     
     st.caption("🏗 It's still under construction, come back in a few days")
+
 
 
 
