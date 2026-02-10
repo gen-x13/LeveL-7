@@ -333,8 +333,8 @@ class TsunamiRisk():
        # Scatter
        fig_tsu.add_trace(
        go.Scatter(
-            x=dfy["magnitude"],
-            y=dfy["depth"],
+            x=df0["magnitude"],
+            y=df0["depth"],
             mode="markers",
             marker=dict(
                 size=10,
@@ -664,6 +664,7 @@ class TsunamiRiskEW():
             # chaque probabilités + noms du pays/villes grâce au JSON !
             
             return risk_score
+
 
 
 
