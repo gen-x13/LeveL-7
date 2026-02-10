@@ -42,7 +42,7 @@ selected = option_menu(
     styles={
         "container": {
             "padding": "0.3rem",
-            "background-color": "rgba(11, 37, 69, 0.75)",
+            "background-color": "transparent",
             "backdrop-filter": "blur(6px)",
             "border-radius": "14px",
         },
@@ -398,6 +398,7 @@ elif selected == "Early Warning":
         
     
     st.caption("🏗 It's still under construction, come back in a few days")
+
 
 
 
