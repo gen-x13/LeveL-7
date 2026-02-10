@@ -322,9 +322,8 @@ class TsunamiRisk():
        
        # Bar
        fig_tsu.add_trace(
-       go.Bar(x=df0["depth"],
-              y=df0["magnitude"],
-              orientation="h",
+       go.Bar(x=df0["magnitude"], 
+              y=df0["depth"], 
               marker_color=df0["tsunami"], 
               ),
              row=1, col=1,
@@ -353,19 +352,19 @@ class TsunamiRisk():
        frames = []
 
        for year in years:
-            df0 = df_country[df_country["Year"] == year]
+            dfy = df_country[df_country["Year"] == year]
         
             frames.append(
                 go.Frame(
                     data=[
                         dict(
-                            x=df0["depth"],
-                            y=df0["magnitude"],
+                            x=dfy["depth"],
+                            y=dfy["magnitude"],
                             marker=dict(color=df0["tsunami"])
                         ),
                         dict(
-                            x=df0["magnitude"],
-                            y=df0["depth"],
+                            x=dfy["magnitude"],
+                            y=dfy["depth"],
                             marker=dict(color=df0["tsunami"])
                         )
                     ],
@@ -675,6 +674,7 @@ class TsunamiRiskEW():
             # chaque probabilités + noms du pays/villes grâce au JSON !
             
             return risk_score
+
 
 
 
