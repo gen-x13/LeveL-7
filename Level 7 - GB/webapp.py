@@ -45,6 +45,7 @@ selected = option_menu(
             "background-color": "rgba(11, 37, 69, 0.75)",
             "backdrop-filter": "blur(6px)",
             "border-radius": "14px",
+            "box-shadow": "0 4px 12px rgba(0,0,0,0.15)",
         },
         "nav-link": {
             "font-size": "15px",
@@ -398,6 +399,7 @@ elif selected == "Early Warning":
         
     
     st.caption("🏗 It's still under construction, come back in a few days")
+
 
 
 
