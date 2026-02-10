@@ -71,7 +71,7 @@ class HazardMapping():
         fig1.update_layout(
             margin=dict(l=0, r=0, t=30, b=0),
             #scene=dict(dragmode='orbit'),
-            paper_bgcolor="#111111",
+            paper_bgcolor="LightSteelBlue",
             plot_bgcolor="#111111",
             font=dict(color='white', family="Arial", size=14),
             title=dict(
@@ -116,7 +116,7 @@ class HazardMapping():
         fig1.update_layout(
             margin=dict(l=0, r=0, t=30, b=0),
             #scene=dict(dragmode='orbit'),
-            paper_bgcolor="#111111",
+            paper_bgcolor="LightSteelBlue",
             plot_bgcolor="#111111",
             font=dict(color='white', family="Arial", size=14),
             title=dict(
@@ -161,7 +161,7 @@ class HazardMapping():
         fig2.update_layout(
             margin=dict(l=0, r=0, t=30, b=0),
             #scene=dict(dragmode='orbit'),
-            paper_bgcolor="#111111",
+            paper_bgcolor="LightSteelBlue",
             plot_bgcolor="#111111",
             font=dict(color='white', family="Arial", size=14),
             title=dict(
@@ -206,7 +206,7 @@ class HazardMapping():
         fig2.update_layout(
             margin=dict(l=0, r=0, t=30, b=0),
             #scene=dict(dragmode='orbit'),
-            paper_bgcolor="#111111",
+            paper_bgcolor="LightSteelBlue",
             plot_bgcolor="#111111",
             font=dict(color='white', family="Arial", size=14),
             title=dict(
@@ -251,7 +251,7 @@ class HazardMapping():
         fig3.update_layout(
             margin=dict(l=0, r=0, t=30, b=0),
             #scene=dict(dragmode='orbit'),
-            paper_bgcolor="#111111",
+            paper_bgcolor="LightSteelBlue",
             plot_bgcolor="#111111",
             font=dict(color='white', family="Arial", size=14),
             title=dict(
@@ -296,7 +296,7 @@ class HazardMapping():
         fig3.update_layout(
             margin=dict(l=0, r=0, t=30, b=0),
             scene=dict(dragmode='orbit'),
-            paper_bgcolor="#111111",
+            paper_bgcolor="LightSteelBlue",
             plot_bgcolor="#111111",
             font=dict(color='white', family="Arial", size=14),
             title=dict(
@@ -342,6 +342,7 @@ class HazardMappingAnimation():
             fig.layout.coloraxis.showscale = True 
             fig.layout.sliders[0].pad.t = 10
             fig.layout.updatemenus[0].pad.t= 10   
+
 
 
 
