@@ -297,7 +297,7 @@ class TsunamiRisk():
         cities_df = df
         self.df2 = initialization(df_copy, cities_df)
     
-    def tsunami_estimation_graph(self, country): # plus tard Mode : Y/M
+    def tsunami_estimation_graph(self, country): 
        
        from plotly.subplots import make_subplots
        import plotly.graph_objects as go
@@ -313,7 +313,7 @@ class TsunamiRisk():
                                 rows=1,
                                 cols=2,
                                 specs=[
-                                    [{"type": "bar"}, {"type": "pie"}]
+                                    [{"type": "bar"}, {"type": "scatter"}]
                                 ]
                             )
        
@@ -324,18 +324,25 @@ class TsunamiRisk():
        fig_tsu.add_trace(
        go.Bar(x=df0["magnitude"], 
               y=df0["depth"], 
+              orientation="h",
               marker_color=df0["tsunami"], 
               ),
              row=1, col=1,
        )
        
-       # Pie
+       # Scatter
        fig_tsu.add_trace(
-       go.Pie(labels=df0['magnitude'], values=df0['depth'],
-              marker=dict(colors=df0["tsunami"]), #, showlegend=False
-              ),
-             row=1, col=2,
-       )
+       go.Scatter(
+            x=dfy["magnitude"],
+            y=dfy["depth"],
+            mode="markers",
+            marker=dict(
+                size=10,
+                color=dfy["tsunami"],
+                colorscale="Reds",
+                showscale=False
+            )
+        )
        
        # Display
        fig_tsu.update_layout(height=600, width=1400, title_text=f"Earthquake & Tsunami's Risk in {country}")    
@@ -352,7 +359,7 @@ class TsunamiRisk():
                                     y=dfy["depth"],
                                     marker_color=dfy["tsunami"]
                                 ),
-                                go.Pie(labels=dfy['magnitude'], 
+                                go.Scatter(labels=dfy['magnitude'], 
                                        values=dfy['depth'],
                                        marker=dict(colors=df0["tsunami"]), #, showlegend=False
                                        )
@@ -395,7 +402,8 @@ class TsunamiRisk():
                                         {
                                             "label": "Play",
                                             "method": "animate",
-                                            "args": [None, {"frame": {"duration": 3000, "redraw": True}, "fromcurrent": True, "transition": {"duration": 500}}]
+                                            "args": [None, {"frame": {"duration": 3000, "redraw": True}, 
+                                                            "fromcurrent": True, "transition": {"duration": 500}}]
                                         },
                                         {
                                             "label": "Pause",
@@ -655,6 +663,7 @@ class TsunamiRiskEW():
             # chaque probabilités + noms du pays/villes grâce au JSON !
             
             return risk_score
+
 
 
 
