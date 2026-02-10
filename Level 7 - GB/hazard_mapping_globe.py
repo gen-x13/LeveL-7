@@ -322,7 +322,8 @@ class HazardMapping():
 class HazardMappingAnimation():
     
     def __init__(self, data):
-        
+
+        # Retrieving each plot inside the class above
         self.map = HazardMapping()
         self.fig_tsunami = self.map.fig_tsunami
         self.fig_tsunami_month = self.map.fig_tsunami_month
@@ -330,18 +331,26 @@ class HazardMappingAnimation():
         self.fig_earthquake_month = self.map.fig_earthquake_month
         self.fig_depth = self.map.fig_depth
         self.fig_depth_month = self.map.fig_depth_month
-        
+
+        # List of the plot to be animated
         fig_liste = self.fig_tsunami, self.fig_tsunami_month, self.fig_earthquake, self.fig_earthquake_month, self.fig_depth, self.fig_depth_month
-        
+
+        # Iteration for animation
         for fig in fig_liste:
 
             if fig.layout.updatemenus and fig.layout.updatemenus[0].buttons:
                 fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 600
                 fig.layout.updatemenus[0].buttons[0].args[1]["transition"]["duration"] = 600
-            
+
+            # Color Axis
             fig.layout.coloraxis.showscale = True 
+            # Sliders
             fig.layout.sliders[0].pad.t = 10
-            fig.layout.updatemenus[0].pad.t= 10   
+            # Updatemenus
+            fig.layout.updatemenus[0].pad.t= 10
+            # Background
+            fig.layout.plot_bgcolor = 'rgb(187, 211, 240)'
+
 
 
 
