@@ -77,7 +77,7 @@ class HazardMapping():
             showland=True, landcolor="#3D3D3D",
             showocean=True, oceancolor="#1e1e1e",
             projection_type="orthographic",
-            bgcolor="#111111"
+            bgcolor=backg_color
         )
         
         fig1.update_layout(
@@ -356,6 +356,7 @@ class HazardMappingAnimation():
             fig.layout.updatemenus[0].pad.t= 10
             # Background
             fig.layout.plot_bgcolor = 'rgb(187, 211, 240)'
+
 
 
 
