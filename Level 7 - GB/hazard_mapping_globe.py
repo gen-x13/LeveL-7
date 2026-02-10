@@ -2,6 +2,7 @@
 from pathlib import Path
 import numpy as np
 import pandas as pd
+import random
 import streamlit as st
 import plotly.express as px
 
@@ -29,6 +30,17 @@ data["YearMonth"] = data["Year"].astype(str) + "-" + data["Month"].astype(str).s
 data = data.sort_values(by=["Year", "Month"], ascending=True)
 data = data.sort_values(by=["Year"], ascending=True)
 
+# Background Colors for plots
+brig_blue = "rgb(0, 150, 255)"
+coba_blue = "rgb(0, 71, 171)"
+egyp_blue = "rgb(20, 52, 164)"
+neon_blue = "rgb(31, 81, 255)"
+
+# List of the colors
+colors = [brig_blue, coba_blue, egyp_blue, neon_blue]
+
+# Randomization of the color background
+backg_color = random.choice(colors)
 
 # --------------------------------------------------------------------------- #
 #                         Creation of the 3D Globe                            #
@@ -65,13 +77,13 @@ class HazardMapping():
             showland=True, landcolor="#3D3D3D",
             showocean=True, oceancolor="#1e1e1e",
             projection_type="orthographic",
-            bgcolor="LightSteelBlue"
+            bgcolor="#111111"
         )
         
         fig1.update_layout(
             margin=dict(l=0, r=0, t=30, b=0),
             #scene=dict(dragmode='orbit'),
-            paper_bgcolor="LightSteelBlue",
+            paper_bgcolor=backg_color,
             font=dict(color='white', family="Arial", size=14),
             title=dict(
                 font=dict(color="white", size=24),
@@ -115,7 +127,7 @@ class HazardMapping():
         fig1.update_layout(
             margin=dict(l=0, r=0, t=30, b=0),
             #scene=dict(dragmode='orbit'),
-            paper_bgcolor="rgb(176,196,222)",
+            paper_bgcolor=backg_color,
             font=dict(color='white', family="Arial", size=14),
             title=dict(
                 font=dict(color="white", size=24),
@@ -159,7 +171,7 @@ class HazardMapping():
         fig2.update_layout(
             margin=dict(l=0, r=0, t=30, b=0),
             #scene=dict(dragmode='orbit'),
-            paper_bgcolor="rgb(176,196,222)",
+            paper_bgcolor=backg_color,
             font=dict(color='white', family="Arial", size=14),
             title=dict(
                 font=dict(color="white", size=24),
@@ -202,8 +214,8 @@ class HazardMapping():
         
         fig2.update_layout(
             margin=dict(l=0, r=0, t=30, b=0),
-            scene=dict(dragmode='orbit'),
-            paper_bgcolor="rgb(153,101,21)",
+            #scene=dict(dragmode='orbit'),
+            paper_bgcolor=backg_color,
             font=dict(color='white', family="Arial", size=14),
             title=dict(
                 font=dict(color="white", size=24),
@@ -247,7 +259,7 @@ class HazardMapping():
         fig3.update_layout(
             margin=dict(l=0, r=0, t=30, b=0),
             #scene=dict(dragmode='orbit'),
-            paper_bgcolor="rgb(176,0,0)",
+            paper_bgcolor=backg_color,
             font=dict(color='white', family="Arial", size=14),
             title=dict(
                 font=dict(color="white", size=24),
@@ -291,7 +303,7 @@ class HazardMapping():
         fig3.update_layout(
             margin=dict(l=0, r=0, t=30, b=0),
             #scene=dict(dragmode='orbit'),
-            paper_bgcolor="rgb(176,0,0)",
+            paper_bgcolor=backg_color,
             font=dict(color='white', family="Arial", size=14),
             title=dict(
                 font=dict(color="white", size=24),
@@ -344,6 +356,7 @@ class HazardMappingAnimation():
             fig.layout.updatemenus[0].pad.t= 10
             # Background
             fig.layout.plot_bgcolor = 'rgb(187, 211, 240)'
+
 
 
 
