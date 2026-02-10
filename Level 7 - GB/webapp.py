@@ -51,7 +51,7 @@ selected = option_menu(
             "color": "#dbeafe",
             "border-radius": "8px",
             "margin": "0 6px",
-            "--hover-color": "#1e3a8a",
+            "--hover-color": "rgba(30, 58, 138, 0.6)",
             "transition": "all 0.2s ease",
         },
         "nav-link-selected": {
@@ -397,6 +397,7 @@ elif selected == "Early Warning":
         
     
     st.caption("🏗 It's still under construction, come back in a few days")
+
 
 
 
