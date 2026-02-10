@@ -35,29 +35,33 @@ st.set_page_config(page_title="Tsunami Risk Assessment",
                    initial_sidebar_state="collapsed")
 
 selected = option_menu(
-    menu_title="Menu",
-    options = ["Mapping", "Estimation", "Prediction", "Early Warning"], # Page pour relier plusieurs pdf entre eux !
-    icons = ["geo-alt", "bar-chart", "cpu", "bell"],
-    menu_icon="cast",
-    default_index=0,
+    menu_title=None,
+    options=["Mapping", "Estimation", "Prediction", "Early Warning"],
+    icons=["geo-alt", "bar-chart", "cpu", "bell"],
+    orientation="horizontal",
     styles={
         "container": {
-            "padding": "0",
-            "background-color": "#03224c",
+            "padding": "0.3rem",
+            "background-color": "#0b2545",
         },
         "nav-link": {
-            "font-size": "16px",
+            "font-size": "15px",
             "text-align": "center",
-            "color": "#e0e0e0",
-            "--hover-color": "#48CAE4",
+            "color": "#dbeafe",
+            "border-radius": "8px",
+            "margin": "0 6px",
+            "--hover-color": "#1e3a8a",
+            "transition": "all 0.2s ease",
         },
         "nav-link-selected": {
-            "background-color": "#ffffff",
-            "color": "#03224c",
+            "background-color": "#38bdf8",
+            "color": "#020617",
             "font-weight": "600",
+            "border-radius": "8px",
         },
     },
-) 
+)
+
 
 # ----------------------- Background ------------------------------------ #
 
@@ -392,6 +396,7 @@ elif selected == "Early Warning":
         
     
     st.caption("🏗 It's still under construction, come back in a few days")
+
 
 
 
