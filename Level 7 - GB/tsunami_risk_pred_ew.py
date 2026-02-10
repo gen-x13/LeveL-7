@@ -343,7 +343,7 @@ class TsunamiRisk():
                 showscale=False
             )
           )
-           row=1, col=2
+           row=1, col=2,
         )
        
        # Display
@@ -351,46 +351,43 @@ class TsunamiRisk():
        
        # Animation Parameters
        frames = []
+
        for year in years:
-           dfy = df_country[df_country["Year"] == year]
-           frames.append (
-                        go.Frame(
-                            data=[
-                                go.Bar(
-                                    x=dfy["magnitude"],
-                                    y=dfy["depth"],
-                                    marker_color=dfy["tsunami"]
-                                ),
-                                go.Scatter(labels=dfy['magnitude'], 
-                                       values=dfy['depth'],
-                                       marker=dict(colors=df0["tsunami"]), #, showlegend=False
-                                       )
-                            ],
-                            name=str(year)
+            dfy = df_country[df_country["Year"] == year]
+        
+            frames.append(
+                go.Frame(
+                    data=[
+                        dict(
+                            x=dfy["depth"],
+                            y=dfy["magnitude"],
+                            marker=dict(color=dfy["tsunami"])
+                        ),
+                        dict(
+                            x=dfy["magnitude"],
+                            y=dfy["depth"],
+                            marker=dict(color=dfy["tsunami"])
                         )
-                    )
-                       
-       fig_tsu.frames=frames
+                    ],
+                    name=str(year)
+                )
+            )
+        
+       fig_tsu.frames = frames
+
          # customize this frame duration according to your data!!!!!
-       sliders = [
-                   {
-                       "pad": {"t": 50},
-                       "len": 0.9,
-                       "x": 0.1,
-                       
-                       "steps": [
-                           {
-                               "args": [
-                                            [str(year)],
-                                            {"frame": {"duration": 1000}, "mode": "immediate"}
-                                        ],
-                               "label": str(year),
-                               "method": "animate",
-                           }
-                           for year in years
-                       ],
-                   }
-               ]
+       sliders = [{
+            "pad": {"t": 30},
+            "currentvalue": {"prefix": "Year: "},
+            "steps": [
+                {
+                    "args": [[str(year)], {"frame": {"duration": 0}, "mode": "immediate"}],
+                    "label": str(year),
+                    "method": "animate"
+                }
+                for year in years
+            ]
+        }]
        
        
        fig_tsu.update_layout(
@@ -404,13 +401,26 @@ class TsunamiRisk():
                                         {
                                             "label": "Play",
                                             "method": "animate",
-                                            "args": [None, {"frame": {"duration": 3000, "redraw": True}, 
-                                                            "fromcurrent": True, "transition": {"duration": 500}}]
+                                            "args": [
+                                                None,
+                                                {
+                                                    "frame": {"duration": 500},
+                                                    "transition": {"duration": 300},
+                                                    "fromcurrent": True,
+                                                    "mode": "immediate"
+                                                }
+                                            ]
                                         },
                                         {
                                             "label": "Pause",
                                             "method": "animate",
-                                            "args": [[None], {"frame": {"duration": 0}, "mode": "immediate"}]
+                                            "args": [
+                                                [None],
+                                                {
+                                                    "frame": {"duration": 0},
+                                                    "mode": "immediate"
+                                                }
+                                            ]
                                         }
                                     ]
                                 }],
@@ -665,6 +675,7 @@ class TsunamiRiskEW():
             # chaque probabilités + noms du pays/villes grâce au JSON !
             
             return risk_score
+
 
 
 
