@@ -90,14 +90,22 @@ class HazardMapping():
                 x=1,
                 y=0
             ),
-        coloraxis_colorbar=dict(
+                coloraxis_colorbar=dict(
                 title=value_column,
                 title_side="right",  # NOTE: use title_side (underscore) if needed
                 thicknessmode="pixels", thickness=20,
                 lenmode="pixels", len=300,
                 yanchor="middle", y=0.5,
                 xanchor="left"
-            )
+            ),
+                sliders=[dict(
+                bgcolor="black",          # slider font
+                bordercolor="black",
+                borderwidth=1,
+                font=dict(color="white"),
+                activebgcolor="#444444",  # active step font
+                pad=dict(t=20),
+            )]
         )
     
         return fig1
@@ -134,14 +142,22 @@ class HazardMapping():
                 x=1,
                 y=0
             ),
-        coloraxis_colorbar=dict(
+                coloraxis_colorbar=dict(
                 title=value_column,
                 title_side="right",  # NOTE: use title_side (underscore) if needed
                 thicknessmode="pixels", thickness=20,
                 lenmode="pixels", len=300,
                 yanchor="middle", y=0.5,
                 xanchor="left"
-            )
+            ),
+                sliders=[dict(
+                bgcolor="black",          # slider font
+                bordercolor="black",
+                borderwidth=1,
+                font=dict(color="white"),
+                activebgcolor="#444444",  # active step font
+                pad=dict(t=20),
+            )]
         )
     
         return fig1
@@ -356,6 +372,7 @@ class HazardMappingAnimation():
             fig.layout.updatemenus[0].pad.t= 10
             # Background
             fig.layout.plot_bgcolor = 'rgb(187, 211, 240)'
+
 
 
 
