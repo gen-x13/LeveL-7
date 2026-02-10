@@ -338,7 +338,7 @@ class TsunamiRisk():
             mode="markers",
             marker=dict(
                 size=10,
-                color=dfy["tsunami"],
+                color=df0["tsunami"],
                 colorscale="Reds",
                 showscale=False
             )
@@ -664,6 +664,7 @@ class TsunamiRiskEW():
             # chaque probabilités + noms du pays/villes grâce au JSON !
             
             return risk_score
+
 
 
 
