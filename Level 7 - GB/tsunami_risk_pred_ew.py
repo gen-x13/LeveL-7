@@ -342,7 +342,7 @@ class TsunamiRisk():
                 colorscale="Reds",
                 showscale=False
             )
-          )
+          ),
            row=1, col=2,
         )
        
@@ -675,6 +675,7 @@ class TsunamiRiskEW():
             # chaque probabilités + noms du pays/villes grâce au JSON !
             
             return risk_score
+
 
 
 
