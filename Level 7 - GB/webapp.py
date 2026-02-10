@@ -34,13 +34,28 @@ from tsunami_risk_pred_ew import TsunamiRisk, TsunamiRiskPred, TsunamiRiskEW
 st.set_page_config(page_title="Tsunami Risk Assessment", 
                    initial_sidebar_state="collapsed")
 
-selected=option_menu(
-        menu_title="Menu",
-        options = ["Mapping", "Estimation", "Prediction", "Early Warning"], # Page pour relier plusieurs pdf entre eux !
-        icons = ["geo-alt", "bar-chart", "cpu", "bell"],
-        menu_icon="cast",
-        default_index=0,
-        orientation="horizontal"
+selected = option_menu(
+    menu_title=None,
+    options=["Mapping", "Estimation", "Prediction", "Early Warning"],
+    icons=["geo-alt", "bar-chart", "cpu", "bell"],
+    orientation="horizontal",
+    styles={
+        "container": {
+            "padding": "0",
+            "background-color": "#03224c",
+        },
+        "nav-link": {
+            "font-size": "16px",
+            "text-align": "center",
+            "color": "#e0e0e0",
+            "--hover-color": "#48CAE4",
+        },
+        "nav-link-selected": {
+            "background-color": "#ffffff",
+            "color": "#03224c",
+            "font-weight": "600",
+        },
+    },
 ) 
 
 # ----------------------- Background ------------------------------------ #
@@ -376,6 +391,7 @@ elif selected == "Early Warning":
         
     
     st.caption("🏗 It's still under construction, come back in a few days")
+
 
 
 
