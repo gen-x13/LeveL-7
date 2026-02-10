@@ -356,8 +356,7 @@ class TsunamiRisk():
             frames.append(
                 go.Frame(
                     data=[
-                        data=[
-                                go.Bar(
+                        go.Bar(
                                     x=dfy["magnitude"],
                                     y=dfy["depth"],
                                     marker_color=dfy["tsunami"]
@@ -673,6 +672,7 @@ class TsunamiRiskEW():
             # chaque probabilités + noms du pays/villes grâce au JSON !
             
             return risk_score
+
 
 
 
