@@ -48,7 +48,7 @@ I’m planning a future remake with:
 
 ### **## 🚀 Demo**
 
-👉 [Click here to test the Streamlit live app](https://level-5-my-analysis-report.streamlit.app/)
+👉 [Click here to test the Streamlit live app](https://worldoceanhazard.streamlit.app/)
 
 ---
 
