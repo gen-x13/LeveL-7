@@ -71,7 +71,7 @@ class HazardMapping():
             hover_data={
                 "tsunami": False,        
                 "tsunami_label": True     
-            }
+            },
             color_continuous_scale="Blues",
             projection="orthographic",
             size="magnitude",
