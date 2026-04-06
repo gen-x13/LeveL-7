@@ -133,7 +133,7 @@ class HazardMapping():
             showland=True, landcolor="#3D3D3D",
             showocean=True, oceancolor="#1e1e1e",
             projection_type="orthographic",
-            bgcolor="#111111",
+            bgcolor=backg_color,
             domain=dict(
                 x=[0, 1],
                 y=[0, 1]
@@ -189,7 +189,7 @@ class HazardMapping():
             showland=True, landcolor="#3D3D3D",
             showocean=True, oceancolor="#1e1e1e",
             projection_type="orthographic",
-            bgcolor="#111111",
+            bgcolor=backg_color,
             domain=dict(
                 x=[0, 1],
                 y=[0, 1]
@@ -245,7 +245,7 @@ class HazardMapping():
             showland=True, landcolor="#3D3D3D",
             showocean=True, oceancolor="#1e1e1e",
             projection_type="orthographic",
-            bgcolor="#111111",
+            bgcolor=backg_color,
             domain=dict(
                 x=[0, 1],
                 y=[0, 1]
@@ -301,7 +301,7 @@ class HazardMapping():
             showland=True, landcolor="#3D3D3D",
             showocean=True, oceancolor="#1e1e1e",
             projection_type="orthographic",
-            bgcolor="#111111",
+            bgcolor=backg_color,
             domain=dict(
                 x=[0, 1],
                 y=[0, 1]
@@ -357,7 +357,7 @@ class HazardMapping():
             showland=True, landcolor="#3D3D3D",
             showocean=True, oceancolor="#1e1e1e",
             projection_type="orthographic",
-            bgcolor="#111111",
+            bgcolor=backg_color,
             domain=dict(
                 x=[0, 1],
                 y=[0, 1]
