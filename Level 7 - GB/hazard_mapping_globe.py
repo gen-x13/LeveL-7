@@ -31,7 +31,7 @@ data = data.sort_values(by=["Year", "Month"], ascending=True)
 data = data.sort_values(by=["Year"], ascending=True)
 
 # Mapping the tsunami column with labels
-df["tsunami_label"] = df["tsunami"].map({0: "Pas de tsunami", 1: "Tsunami"})
+data["tsunami_label"] = data["tsunami"].map({0: "Pas de tsunami", 1: "Tsunami"})
 
 # Background Colors for plots
 brig_blue = "rgb(0, 150, 255)"
