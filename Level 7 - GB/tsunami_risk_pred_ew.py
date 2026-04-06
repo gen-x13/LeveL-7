@@ -208,7 +208,7 @@ class GeonamesCountriesTxtFileReader(object):
   start = time.time()
   df = pd.read_csv(
    _self.input_file,
-   #delim_whitespace=False, # specifies whether or not whitespace (e.g. ' ' or '\t') will be used as the sep delimiter.
+   #delim_whitespace=False, # specifies whether or not whitespace (e.g. ' ' or '\t') will be used as the sep delimiter. 
    sep='\t', # the famous separator
    skiprows=0, # this parameter is use to skip passed rows in new data frame
    encoding='utf-8', # encoding standard
