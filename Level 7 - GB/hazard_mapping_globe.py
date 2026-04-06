@@ -30,6 +30,9 @@ data["YearMonth"] = data["Year"].astype(str) + "-" + data["Month"].astype(str).s
 data = data.sort_values(by=["Year", "Month"], ascending=True)
 data = data.sort_values(by=["Year"], ascending=True)
 
+# Mapping the tsunami column with labels
+df["tsunami_label"] = df["tsunami"].map({0: "Pas de tsunami", 1: "Tsunami"})
+
 # Background Colors for plots
 brig_blue = "rgb(0, 150, 255)"
 coba_blue = "rgb(0, 71, 171)"
@@ -64,7 +67,7 @@ class HazardMapping():
             data,
             lon="longitude",
             lat="latitude",
-            color="tsunami",
+            color="tsunami_label", # mapped column
             color_continuous_scale="Blues",
             projection="orthographic",
             size="magnitude",
@@ -120,7 +123,7 @@ class HazardMapping():
             data,
             lon="longitude",
             lat="latitude",
-            color="tsunami",
+            color="tsunami_label", # mapped column
             color_continuous_scale="Blues",
             projection="orthographic",
             size="magnitude",
