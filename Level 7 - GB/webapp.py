@@ -377,15 +377,15 @@ elif selected == "Early Warning":
             
             # Traffic light for every state of the probability to have a tsunami
             elif tsunami_pred == 0:
-                st.markdown(":green-background[🟢 No significant seismic activity detected.]")
+                st.markdown(":color[🟢 No significant seismic activity detected.]{{background='rgb(9, 121, 105)' foreground='black'}}")
             elif tsunami_pred < threshold_green:
-                st.markdown(f":color[🟢 Green Alert  : Low risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(0,100,200)' foreground='black'}}")
+                st.markdown(f":color[🟢 Green Alert  : Low risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(9, 121, 105)' foreground='black'}}")
             elif tsunami_pred < threshold_yellow:
-                st.markdown(f":yellow-background[🟡 Yellow Alert : Moderate risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]")
+                st.markdown(f":color[🟡 Yellow Alert : Moderate risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(9, 121, 105)' foreground='black'}}")
             elif tsunami_pred < threshold_orange:
-                st.markdown(f":orange-background[🟠 Orange Alert : High risk of tsunami. Percentage : {tsunami_pred*100:.1f}] %")
+                st.markdown(f":color[🟠 Orange Alert : High risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(9, 121, 105)' foreground='black'}}")
             else :
-                st.markdown(f":red-background[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]")
+                st.markdown(f":color[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(9, 121, 105)' foreground='black'}}")
 
             for index, place in enumerate(model.places):
                 result_title = f"Result {index+1}"
