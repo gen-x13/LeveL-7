@@ -381,11 +381,11 @@ elif selected == "Early Warning":
             elif tsunami_pred < threshold_green:
                 st.markdown(f":color[🟢 Green Alert  : Low risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(9, 121, 105)' foreground='black'}}")
             elif tsunami_pred < threshold_yellow:
-                st.markdown(f":color[🟡 Yellow Alert : Moderate risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(9, 121, 105)' foreground='black'}}")
+                st.markdown(f":color[🟡 Yellow Alert : Moderate risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(223, 255, 0)' foreground='black'}}")
             elif tsunami_pred < threshold_orange:
-                st.markdown(f":color[🟠 Orange Alert : High risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(9, 121, 105)' foreground='black'}}")
+                st.markdown(f":color[🟠 Orange Alert : High risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 170, 0)' foreground='black'}}")
             else :
-                st.markdown(f":color[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(9, 121, 105)' foreground='black'}}")
+                st.markdown(f":color[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 0, 0)' foreground='black'}}")
 
             cols = st.columns(2)
           
@@ -395,13 +395,13 @@ elif selected == "Early Warning":
               
                 result_title = f"Result {index+1}"
                 results = f"""
-                           ***{result_title}***
+                           :black[***{result_title}***]
                            
-                           **Place selected** : {place}
+                           :black[**Place selected** : {place}]
                            
-                           **Magnitude** : {model.mags[index]}
+                           :black[**Magnitude** : {model.mags[index]}]
                            
-                           **Depth** : {model.depths[index]}
+                           :black[**Depth** : {model.depths[index]}]
                            
                            **Hour** : {model.times[index]})
                           """
