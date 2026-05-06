@@ -377,21 +377,24 @@ elif selected == "Early Warning":
             
             # Traffic light for every state of the probability to have a tsunami
             elif tsunami_pred == 0:
-                st.success("🟢 No significant seismic activity detected.")
+                st.markdown(":green-background[🟢 No significant seismic activity detected.]")
             elif tsunami_pred < threshold_green:
-                st.success(f"🟢 Green Alert  : Low risk of tsunami. Percentage : {tsunami_pred*100:.1f} %")
+                st.markdown(f":green-background[🟢 Green Alert  : Low risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]")
             elif tsunami_pred < threshold_yellow:
-                st.success(f"🟡 Yellow Alert : Moderate risk of tsunami. Percentage : {tsunami_pred*100:.1f} %")
+                st.markdown(f":yellow-background[🟡 Yellow Alert : Moderate risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]")
             elif tsunami_pred < threshold_orange:
-                st.success(f"🟠 Orange Alert : High risk of tsunami. Percentage : {tsunami_pred*100:.1f} %")
+                st.markdown(f":orange-background[🟠 Orange Alert : High risk of tsunami. Percentage : {tsunami_pred*100:.1f}] %")
             else :
-                st.success(f"🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %")
-                
-            st.caption(f"Analyzed rayon : {model.max_radius_km} km | "
-                       f"Minimum magnitude : {model.min_magnitude} | "
-                       # Country or all countries
-                       f"Place selected : {model.places} |"
-                       f"Period : 24 hours")
+                st.markdown(f":red-background[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]")
+
+            results = """
+                       **Place selected** : {model.places.strip("['']")}
+                       **Magnitude** : {model.mags}
+                       **Depth** : {model.depths}
+                       **Hour** : {model.times}
+                      """
+            st.markdown(results,
+                       text_alignment="center")
       
     else:
         st.warning("Select all of your parameters for the prediction.")
