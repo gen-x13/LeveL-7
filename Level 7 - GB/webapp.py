@@ -395,15 +395,15 @@ elif selected == "Early Warning":
               
                 result_title = f"Result {index+1}"
                 results = f"""
-                           :black[***{result_title}***]
+                           ***{result_title}***
                            
-                           :black[**Place selected** : {place}]
+                           **Place selected** : {place}
                            
-                           :black[**Magnitude** : {model.mags[index]}]
+                           **Magnitude** : {model.mags[index]}
                            
-                           :black[**Depth** : {model.depths[index]}]
+                           **Depth** : {model.depths[index]}
                            
-                           **Hour** : {model.times[index]})
+                           **Hour** : {model.times[index]}
                           """
                 with col:
                   st.markdown(results, text_alignment="center")
