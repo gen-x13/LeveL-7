@@ -387,13 +387,12 @@ elif selected == "Early Warning":
             else :
                 st.markdown(f":red-background[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]")
 
-            for places in model.places :
-                index = 0
+            for index, place in enumerate(model.places):
                 result_title = f"Result {index+1}"
                 results = f"""
                            ***{result_title}***
                            
-                           **Place selected** : {model.places[index]}
+                           **Place selected** : {place}
                            
                            **Magnitude** : {model.mags[index]}
                            
@@ -402,10 +401,7 @@ elif selected == "Early Warning":
                            **Hour** : {model.times[index]}
                           """
                 
-                  st.markdown(results,
-                           text_alignment="center")
-                  
-                  index +=1
+                st.markdown(results, text_alignment="center")
 
       
     else:
