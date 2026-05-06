@@ -379,7 +379,7 @@ elif selected == "Early Warning":
             elif tsunami_pred == 0:
                 st.markdown(":green-background[🟢 No significant seismic activity detected.]")
             elif tsunami_pred < threshold_green:
-                st.markdown(f":color[🟢 Green Alert  : Low risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background="rgb(0,100,200)" foreground="black"}})
+                st.markdown(f":color[🟢 Green Alert  : Low risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background="rgb(0,100,200)" foreground="black"}}")
             elif tsunami_pred < threshold_yellow:
                 st.markdown(f":yellow-background[🟡 Yellow Alert : Moderate risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]")
             elif tsunami_pred < threshold_orange:
