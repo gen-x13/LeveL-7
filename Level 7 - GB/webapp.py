@@ -341,7 +341,7 @@ elif selected == "Early Warning":
                 "The system analyzes seismic activity within a 2000 km radius (last 24h).") 
     
     # Link to help the user find his latitude and longitude
-    st.markdown(f":black[If you need help to find your coordinates, this site will help you : https://latlongdata.com/]")
+    st.markdown(f":color[If you need help to find your coordinates, this site will help you : https://latlongdata.com/]{{foreground='black'}}")
     
     # Columns to display the features side by side
     one, two = st.columns(2)
@@ -350,8 +350,7 @@ elif selected == "Early Warning":
     with st.spinner("Initialization..."):
         tsunami_risk = get_tsunami_risk(data)
         df = tsunami_risk.df2
-        
-   
+      
     # Choice of latitude and longitude for the user in a text entry
     lat_select = one.text_input("Write a latitude...")
     lon_select = two.text_input("Write a longitude...")
