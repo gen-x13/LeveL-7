@@ -389,7 +389,7 @@ elif selected == "Early Warning":
 
             for index, place in enumerate(model.places):
                 result_title = f"Result {index+1}"
-                results = f"""
+                results = f""":color[
                            ***{result_title}***
                            
                            **Place selected** : {place}
@@ -398,7 +398,7 @@ elif selected == "Early Warning":
                            
                            **Depth** : {model.depths[index]}
                            
-                           **Hour** : {model.times[index]}
+                           **Hour** : {model.times[index]}]{{foreground='black'}}")
                           """
                 
                 st.markdown(results, text_alignment="center")
