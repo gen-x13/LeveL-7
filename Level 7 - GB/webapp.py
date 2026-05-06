@@ -401,9 +401,9 @@ elif selected == "Early Warning":
                          
                          **Hour** : {model.times[index]}
                         """
-               index +=1
+                index +=1
               
-               st.markdown(results,
+                st.markdown(results,
                          text_alignment="center")
 
       
