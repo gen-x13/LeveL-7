@@ -341,7 +341,7 @@ elif selected == "Early Warning":
                 "The system analyzes seismic activity within a 2000 km radius (last 24h).") 
     
     # Link to help the user find his latitude and longitude
-    st.caption(":black[If you need help to find your coordinates, this site will help you : https://latlongdata.com/]")
+    st.markdown(":black[If you need help to find your coordinates, this site will help you : https://latlongdata.com/]")
     
     # Columns to display the features side by side
     one, two = st.columns(2)
