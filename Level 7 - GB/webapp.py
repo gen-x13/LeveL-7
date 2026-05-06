@@ -388,7 +388,7 @@ elif selected == "Early Warning":
                 st.markdown(f":red-background[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]")
 
             results = """
-                       **Place selected** : {model.places.strip("['']")}
+                       f"**Place selected** : {model.places.strip("['']")}"
                        **Magnitude** : {model.mags}
                        **Depth** : {model.depths}
                        **Hour** : {model.times}
