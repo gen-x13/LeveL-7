@@ -387,17 +387,23 @@ elif selected == "Early Warning":
             else :
                 st.markdown(f":red-background[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]")
 
-            results = f"""
-                       **Place selected** : {model.places}
-                       
-                       **Magnitude** : {model.mags}
-                       
-                       **Depth** : {model.depths}
-                       
-                       **Hour** : {model.times}
-                      """
-            st.markdown(results,
-                       text_alignment="center")
+            for places in model.places :
+              index = 0
+              result_title = f"Result {index+1}"
+              results = f"""
+                         ***{result_title}***
+                         
+                         **Place selected** : {model.places[index]}
+                         
+                         **Magnitude** : {model.mags[index]}
+                         
+                         **Depth** : {model.depths[index]}
+                         
+                         **Hour** : {model.times[index]}
+                        """
+              st.markdown(results,
+                         text_alignment="center")
+              index +=1
       
     else:
         st.warning("Select all of your parameters for the prediction.")
