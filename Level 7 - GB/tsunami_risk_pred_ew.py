@@ -593,7 +593,7 @@ class TsunamiRiskEW():
         self.features = df['features']
         
         if len(self.features) == 0:
-            print("⚠️ No seism around this coordinate")
+            print("⚠️ No seismic activity around this coordinate")
             
         self.no_earthquake = False
         
@@ -669,9 +669,6 @@ class TsunamiRiskEW():
             
             print("\n 🪐 RISK SCORE HERE :")
             print(risk_score)
-            
-            # Plus tard je mettrais des précisions avec les lieux où se trouvent réellement
-            # chaque probabilités + noms du pays/villes grâce au JSON !
             
             return risk_score
 
