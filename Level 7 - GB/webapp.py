@@ -401,9 +401,11 @@ elif selected == "Early Warning":
                          
                          **Hour** : {model.times[index]}
                         """
+                index +=1
+              
               st.markdown(results,
                          text_alignment="center")
-              index +=1
+
       
     else:
         st.warning("Select all of your parameters for the prediction.")
