@@ -1,58 +1,57 @@
-## Level 7 🏠
+### ** Tsunami & Earthquake Visualization and Prediction**
 
-### **🏆 Project : Tsunami & Earthquake Visualization and Prediction**
+- **LEVEL 7 - Overview:**  
 
-- **📌 Description:**  
-  This project maps, displays data on a dashboard and make predicitons with real-time data.  
+  This project maps, analyzes, and predicts earthquake and tsunami risks using historical data from 2001 to 2020, along with real-time seismic data.
+
+  It uses structured data : 
+
+    - from the Kaggle dataset : [Tsunami and Earthquake Risk Assessment](https://www.kaggle.com/datasets/ahmeduzaki/global-earthquake-tsunami-risk-assessment-dataset/data) (used for the mapping, estimation and prediction pages), 
+    - from Geonames (used to simplify geographic mapping) and from the USGS API (used for the early warning page). 
+
+  It includes : 
+
+    - EDA, 
+    - Supervised learning algorithm (AdaBoostClassifier and DecisionTreeClassifier), 
+    - Machine learning pipelines (with RandomizedSearchCV), 
+    - Interactive and animated maps and dashboards (coming soon).
+
+  Main purposes : 
+
+     - to identify the regions most at risk for tsunamis over times and in real-time conditions.
+     - to recreate a tsunami warning system with using earthquake magnitude and depth data.
+
+
   There is only version available:
   - 🇬🇧 **English version**: Includes English commentary (`-en`).
 
-- **🛠 Tech Stack:** Python, Pandas, Streamlit, Scikit-learn, PIL.  
-- **⏳ Time to complete:** 1/2 months.  
+- **Tech Stack:** Python, Pandas, Streamlit, Scikit-learn, PIL, Plotly.  
 
 ---
 
 ⚠️ Reminder: This is a beginner-level project : a test, an exploration, a digital sketchbook.         
 ⚠️ Note: This app might take a few seconds to load if it's been inactive — please be patient while it wakes up!    
-⚠️ Note: The real-time prediction is just an alarm, it's not in any case a real prediction for tsunami.
+⚠️ Note: The real-time prediction is just a warning, it's not in any case a real prediction for an occuring tsunami.
 
 ---
 
-### **💭 My thoughts on this project:**  
-This is my **twelfth project**, and for a beginning, I'm proud of it! 🎉  
-- It took me **1 month or less** to build this entirely.
 
-It was a great learning experience, especially for **my problem-solving skills**, my comprehension of **EDA** on that exercise.
-
-💡 My strengths: Determination, self-taught mindset, problem-solving and curiosity.
-
-🚀 Areas for improvement: Code and visualization optimization, and my perfectionnism.
 
 ---
-
-### **💭 Possible Remake of that LEVEL:**  
-I’m planning a future remake with:
-- Improving the dashboard
-- Adding a dahsboard for the Early Warning Page
-- And other things, if suggested
-
-"More advanced versions will come soon... Stay tuned."
-
----
-### **▶️ How to Run the Project:**  
+### **How to Run the Project:**  
 1. Clone the repository:  
    ```bash
    git clone https://github.com/gen-x13/Level-7
    ```
 ---
 
-### **## 🚀 Demo**
+### **##Demo**
 
-👉 [Click here to test the Streamlit live app](https://worldoceanhazard.streamlit.app/)
+👉 [Click here to try it now !](https://worldoceanhazard.streamlit.app/)
 
 ---
 
-### **📦 Requirements**  
+### **Requirements**  
 Before running the project, make sure you have the following libraries installed:  
 ```bash
 pip install pandas streamlit plotly scikit-learn pillow
