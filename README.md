@@ -1,4 +1,4 @@
-### ** Tsunami & Earthquake Visualization and Prediction**
+### **Tsunami & Earthquake Visualization and Prediction**
 
 - **LEVEL 7 - Overview:**  
 
