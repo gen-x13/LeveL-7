@@ -45,7 +45,7 @@
    ```
 ---
 
-### **##Demo**
+### **Demo**
 
 👉 [Click here to try it now !](https://worldoceanhazard.streamlit.app/)
 
