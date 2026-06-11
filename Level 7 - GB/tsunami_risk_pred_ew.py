@@ -308,7 +308,7 @@ class TsunamiRisk():
        # Sorting Years
        years = sorted(df_country["Year"].unique())
        
-       # Figure
+       # 2 Figures 
        fig_tsu = make_subplots(
                                 rows=1,
                                 cols=2,
@@ -325,6 +325,7 @@ class TsunamiRisk():
        go.Bar(x=df0["magnitude"], 
               y=df0["depth"], 
               marker_color=df0["tsunami"], 
+              name="Earthquakes"
               ),
              row=1, col=1,
        )
@@ -340,7 +341,8 @@ class TsunamiRisk():
                 color=df0["tsunami"],
                 colorscale="Reds",
                 showscale=False
-            )
+            ),
+           name="Tsunami Risk"
           ),
            row=1, col=2,
         )
