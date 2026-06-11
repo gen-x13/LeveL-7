@@ -325,7 +325,8 @@ class TsunamiRisk():
        go.Bar(x=df0["magnitude"], 
               y=df0["depth"], 
               marker_color=df0["tsunami"], 
-              name="Earthquakes"
+              name="Earthquakes",
+              legendgroup="earthquakes", 
               ),
              row=1, col=1,
        )
@@ -342,7 +343,8 @@ class TsunamiRisk():
                 colorscale="Reds",
                 showscale=False
             ),
-           name="Tsunami Risk"
+           name="Tsunami Risk",
+           legendgroup="tsunami",
           ),
            row=1, col=2,
         )
