@@ -362,16 +362,24 @@ class TsunamiRisk():
                             x=dfy["magnitude"],
                             y=dfy["depth"],
                             marker_color=dfy["tsunami"],
-                            name="Earthquakes"
+                            name="Earthquakes",
+                            showlegend=True
                         ),
                         go.Scatter(
                             x=dfy["magnitude"],
                             y=dfy["depth"],
-                            marker_color=dfy["tsunami"],
-                            name="Tsunami Risk"
-                        )  # , showlegend=False
+                            mode="markers",     
+                            marker=dict(
+                                size=10,
+                                color=dfy["tsunami"],
+                                colorscale="Reds",
+                                showscale=False
+                            ),
+                            name="Tsunami Risk",
+                            showlegend=True
+                        )
                     ],
-                    traces=[0, 1],
+                    traces=[0, 1],           
                     name=str(year)
                 )
             )
