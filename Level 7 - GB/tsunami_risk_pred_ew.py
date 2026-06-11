@@ -371,6 +371,7 @@ class TsunamiRisk():
                             name="Tsunami Risk"
                         )  # , showlegend=False
                     ],
+                    traces=[0, 1],
                     name=str(year)
                 )
             )
