@@ -361,12 +361,14 @@ class TsunamiRisk():
                         go.Bar(
                             x=dfy["magnitude"],
                             y=dfy["depth"],
-                            marker_color=dfy["tsunami"]
+                            marker_color=dfy["tsunami"],
+                            name="Earthquakes"
                         ),
                         go.Scatter(
                             x=dfy["magnitude"],
                             y=dfy["depth"],
-                            marker_color=dfy["tsunami"]
+                            marker_color=dfy["tsunami"],
+                            name="Tsunami Risk"
                         )  # , showlegend=False
                     ],
                     name=str(year)
