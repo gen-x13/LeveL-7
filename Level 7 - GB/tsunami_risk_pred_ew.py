@@ -365,6 +365,7 @@ class TsunamiRisk():
                             y=dfy["depth"],
                             marker_color=dfy["tsunami"],
                             name="Earthquakes",
+                            legendgroup="earthquakes",
                             showlegend=True
                         ),
                         go.Scatter(
@@ -378,6 +379,7 @@ class TsunamiRisk():
                                 showscale=False
                             ),
                             name="Tsunami Risk",
+                            legendgroup="tsunami",
                             showlegend=True
                         )
                     ],
