@@ -197,17 +197,6 @@ elif selected == "Estimation":
     # Magnitude in areas on earth -> putting lat+long of all countries
     # so they can choose theirs and see the estimation in % through 
     # years (2001-2020) not prediction
-    # Ou alors entrer son année de naissance et voir s'il y avait un risque
-    # de tsunami (pour le fun)
-    
-    # Une idée ! Après Tsunami Risk (sans pred) -> ça doit automatiquement
-    # appeler earthquake ou je copie et colle son programme.
-    
-    # Faire une animation si l'utilisateur sélectionne une plage de données
-    # au lieu d'une seule date !
-    
-    # Pour earthquake -> dashboard animé qui montre aussi depth 
-    
     # Magnitude Estimation and Tsunami Estimation from the 2001-2020
     
     st.title("Tsunamis & Earthquakes Estimation between 2001-2020")
@@ -226,6 +215,8 @@ elif selected == "Estimation":
     )
     
     fig_tsu = tsunami_risk.tsunami_estimation_graph(country=country_name)
+
+    # metric for tsunami, showcase of earthquakes and depth in line charts 
     
     
 # ---------------------------- Prediction from data ------------------------- #
