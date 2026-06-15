@@ -216,6 +216,10 @@ elif selected == "Estimation":
     
     fig_tsu = tsunami_risk.tsunami_estimation_graph(country=country_name)
 
+    changes = list(rng(4).standard_normal(20))
+    data = [sum(changes[:i]) for i in range(20)]
+    delta = round(data[-1], 2)
+
     st.metric(
         "Bar", 10, delta, chart_data=data, chart_type="bar", border=True, delta_color="inverse"
     )
