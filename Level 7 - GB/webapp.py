@@ -216,6 +216,9 @@ elif selected == "Estimation":
     
     fig_tsu = tsunami_risk.tsunami_estimation_graph(country=country_name)
 
+    st.metric(
+        "Bar", 10, delta, chart_data=data, chart_type="bar", border=True, delta_color="inverse"
+    )
     # metric for tsunami, showcase of earthquakes and depth in line charts 
     
     
