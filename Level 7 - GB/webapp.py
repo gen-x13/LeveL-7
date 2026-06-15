@@ -222,25 +222,66 @@ elif selected == "Estimation":
     #Country's serie
     df_country = countries_list[countries_list["country"] == country_name]
 
+    # Sort tsunamis per years for the selected country
+    sort_c = (
+        df_country.groupby("Year")["tsunami"].sum().sort_index()
+    )
+
+    # Delta between last and penultimate year
+    delta = (
+        sort_c.iloc[-1] - sort_c.iloc[-2]
+        if len(sort_c) > 1 else 0
+    )
+
+    risk_year = (
+        df_country.groupby("Year")["tsunami"].mean().mul(100).sort_index()
+    )
+
+    delta = (
+        risk_year.iloc[-1] - risk_year.iloc[-2]
+        if len(risk_year) > 1 else 0
+    )
+
+    mag_year = (
+        df_country.groupby("Year")["magnitude"].mean().sort_index()
+    )
+
+    delta = (
+        mag_year.iloc[-1] - mag_year.iloc[-2]
+        if len(mag_year) > 1 else 0
+    )
+
     # Three metrics
     col1, col2, col3 = st.columns(3)
 
     with col1:
         st.metric(
-            "Earthquakes",
-            len(df_country)
+            "Magnitude",
+            f"{mag_year.iloc[-1]:.2f}",
+            f"{delta:+.2f}",
+            chart_data=mag_year,
+            chart_type="line",
+            border=True
         )
     
     with col2:
         st.metric(
-            "Average Magnitude",
-            round(df_country["magnitude"].mean(), 2)
+            "Tsunami Risk (%)",
+            f"{risk_year.iloc[-1]:.1f}%",
+            f"{delta:+.1f}%",
+            chart_data=risk_year,
+            chart_type="line",
+            border=True
         )
     
     with col3:
         st.metric(
-            "Tsunami Rate",
-            f"{df_country['tsunami'].mean()*100:.1f}%"
+            "Tsunamis",
+            int(sort_c.iloc[-1]),
+            delta,
+            chart_data=sort_c,
+            chart_type="bar",
+            border=True
         )
     
 # ---------------------------- Prediction from data ------------------------- #
