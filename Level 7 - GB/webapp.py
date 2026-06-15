@@ -216,7 +216,6 @@ elif selected == "Estimation":
     
     fig_tsu = tsunami_risk.tsunami_estimation_graph(country=country_name)
 
-    import streamlit as st
     from numpy.random import default_rng as rng
 
     changes = list(rng(4).standard_normal(20))
