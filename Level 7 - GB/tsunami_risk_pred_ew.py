@@ -303,13 +303,13 @@ class TsunamiRisk():
        import plotly.graph_objects as go
        
        # Filtering for the user's country
-       df_country = self.df2[self.df2["country"] == country]
+       self.df_country = self.df2[self.df2["country"] == country]
        
        # Sorting Years
-       years = sorted(df_country["Year"].unique())
+       years = sorted(self.df_country["Year"].unique())
        
        # 2 Figures 
-       fig_tsu = make_subplots(
+       self.fig_tsu = make_subplots(
                                 rows=1,
                                 cols=2,
                                 specs=[
@@ -318,13 +318,13 @@ class TsunamiRisk():
                             )
        
        # Per year animation
-       df0 = df_country[df_country["Year"] == years[0]]
+       self.df0 = self.df_country[self.df_country["Year"] == years[0]]
        
        # Bar
-       fig_tsu.add_trace(
-       go.Bar(x=df0["magnitude"], 
-              y=df0["depth"], 
-              marker_color=df0["tsunami"], 
+       self.fig_tsu.add_trace(
+       go.Bar(x=self.df0["magnitude"], 
+              y=self.df0["depth"], 
+              marker_color=self.df0["tsunami"], 
               name="Earthquakes",
               legendgroup="earthquakes", 
               ),
@@ -332,14 +332,14 @@ class TsunamiRisk():
        )
        
        # Scatter
-       fig_tsu.add_trace(
+       self.fig_tsu.add_trace(
        go.Scatter(
-            x=df0["magnitude"],
-            y=df0["depth"],
+            x=self.df0["magnitude"],
+            y=self.df0["depth"],
             mode="markers",
             marker=dict(
                 size=10,
-                color=df0["tsunami"],
+                color=self.df0["tsunami"],
                 colorscale="Reds",
                 showscale=False
             ),
@@ -350,13 +350,13 @@ class TsunamiRisk():
         )
        
        # Display
-       fig_tsu.update_layout(height=600, width=1400, title_text=f"Earthquake & Tsunami's Risk in {country}")    
+       self.fig_tsu.update_layout(height=600, width=1400, title_text=f"Earthquake & Tsunami's Risk in {country}")    
        
        # Animation Parameters
        frames = []
 
        for year in years:
-            dfy = df_country[df_country["Year"] == year]
+            dfy =self.df_country[self.df_country["Year"] == year]
             frames.append(
                 go.Frame(
                     data=[
@@ -389,7 +389,7 @@ class TsunamiRisk():
             )
 
         
-       fig_tsu.frames = frames
+       self.fig_tsu.frames = frames
 
          # customize this frame duration according to your data!!!!!
        sliders = [{
@@ -406,7 +406,7 @@ class TsunamiRisk():
         }]
        
        
-       fig_tsu.update_layout(
+       self.fig_tsu.update_layout(
                                 updatemenus=[{
                                     "type": "buttons",
                                     "direction": "right",
@@ -446,9 +446,10 @@ class TsunamiRisk():
                                 title=f"Earthquake & Tsunami Risk Evolution in {country}"
                             )
        
-       
-       st.plotly_chart(fig_tsu) 
-       
+                                                                                                                                          
+       #st.plotly_chart(self.fig_tsu) 
+       return self.fig_tsu, self.df0
+                                                                                                             
        
 # --------------------------------------------------------------------------- #
 #          Tsunami Risk Pred Class For Prediction Based on Data               #
