@@ -447,14 +447,7 @@ class TsunamiRisk():
                             )
        
                                                                                                                                           
-       st.plotly_chart(self.fig_tsu) 
-       
-       avg_tsunami = self.df_country["tsunami"].mean()
-
-       st.metric(
-            label="Average Tsunami Risk",
-            value=f"{avg_tsunami:.2f}%"
-       )                                    
+       st.plotly_chart(self.fig_tsu)                               
        
 # --------------------------------------------------------------------------- #
 #          Tsunami Risk Pred Class For Prediction Based on Data               #
