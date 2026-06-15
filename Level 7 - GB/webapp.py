@@ -214,8 +214,8 @@ elif selected == "Estimation":
         index=0
     )
     
-    fig_tsu, df = tsunami_risk.tsunami_estimation_graph(country=country_name)
-    st.plotly_chart(fig_tsu) 
+    fig_tsu = tsunami_risk.tsunami_estimation_graph(country=country_name)
+    
 
     from numpy.random import default_rng as rng
 
