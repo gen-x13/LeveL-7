@@ -205,29 +205,19 @@ elif selected == "Estimation":
     with st.spinner("Initialization..."):
         tsunami_risk = get_tsunami_risk(data)
         countries_list = tsunami_risk.df2
-    
+
+    # List for choice
     c_list = countries_list['country'].sort_values()
-    
+  
+    # Choice
     country_name = st.selectbox(
         "Which country ?",
         options= c_list.unique(),
         index=0
     )
-    
+
+    # Figure 
     fig_tsu = tsunami_risk.tsunami_estimation_graph(country=country_name)
-    
-
-    from numpy.random import default_rng as rng
-
-    changes = list(rng(4).standard_normal(20))
-    data = [sum(changes[:i]) for i in range(20)]
-    delta = round(data[-1], 2)
-
-    st.metric(
-        "Bar", country_name, delta, chart_data=data, chart_type="bar", border=True, delta_color="inverse"
-    )
-    # metric for tsunami, showcase of earthquakes and depth in line charts 
-    
     
 # ---------------------------- Prediction from data ------------------------- #
     
