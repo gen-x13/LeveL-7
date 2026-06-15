@@ -8,4 +8,3 @@ streamlit-option-menu
 streamlit_extras
 pillow
 pathlib
-streamlit-plotly-events
