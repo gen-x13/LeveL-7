@@ -229,7 +229,7 @@ elif selected == "Estimation":
 
     # Delta between last and penultimate year
     delta = (
-        sort_c.iloc[-1] - sort_c.iloc[-2]
+        sort_c.iloc[0] - sort_c.iloc[-2]
         if len(sort_c) > 1 else 0
     )
 
@@ -238,7 +238,7 @@ elif selected == "Estimation":
     )
 
     delta = (
-        risk_year.iloc[-1] - risk_year.iloc[-2]
+        risk_year.iloc[0] - risk_year.iloc[-2]
         if len(risk_year) > 1 else 0
     )
 
@@ -247,7 +247,7 @@ elif selected == "Estimation":
     )
 
     delta = (
-        mag_year.iloc[-1] - mag_year.iloc[-2]
+        mag_year.iloc[0] - mag_year.iloc[-2]
         if len(mag_year) > 1 else 0
     )
 
