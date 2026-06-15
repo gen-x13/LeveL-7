@@ -214,7 +214,8 @@ elif selected == "Estimation":
         index=0
     )
     
-    fig_tsu = tsunami_risk.tsunami_estimation_graph(country=country_name)
+    fig_tsu, df = tsunami_risk.tsunami_estimation_graph(country=country_name)
+    st.plotly_chart(fig_tsu) 
 
     from numpy.random import default_rng as rng
 
@@ -223,7 +224,7 @@ elif selected == "Estimation":
     delta = round(data[-1], 2)
 
     st.metric(
-        "Bar", 10, delta, chart_data=data, chart_type="bar", border=True, delta_color="inverse"
+        "Bar", country_name, delta, chart_data=data, chart_type="bar", border=True, delta_color="inverse"
     )
     # metric for tsunami, showcase of earthquakes and depth in line charts 
     
