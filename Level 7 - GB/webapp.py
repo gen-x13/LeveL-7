@@ -217,7 +217,31 @@ elif selected == "Estimation":
     )
 
     # Figure 
-    fig_tsu = tsunami_risk.tsunami_estimation_graph(country=country_name)
+    tsunami_risk.tsunami_estimation_graph(country=country_name)
+  
+    #Country's serie
+    self.df_country = countries_list[countries_list["country"] == country_name]
+
+    # Three metrics
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.metric(
+            "Earthquakes",
+            len(self.df_country)
+        )
+    
+    with col2:
+        st.metric(
+            "Average Magnitude",
+            round(self.df_country["magnitude"].mean(), 2)
+        )
+    
+    with col3:
+        st.metric(
+            "Tsunami Rate",
+            f"{self.df_country['tsunami'].mean()*100:.1f}%"
+        )
     
 # ---------------------------- Prediction from data ------------------------- #
     
