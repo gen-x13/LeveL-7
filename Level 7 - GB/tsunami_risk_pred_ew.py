@@ -447,8 +447,7 @@ class TsunamiRisk():
                             )
        
                                                                                                                                           
-       #st.plotly_chart(self.fig_tsu) 
-       return self.fig_tsu, self.df0
+       st.plotly_chart(self.fig_tsu) 
                                                                                                              
        
 # --------------------------------------------------------------------------- #
