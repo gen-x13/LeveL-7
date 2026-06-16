@@ -232,14 +232,25 @@ elif selected == "Estimation":
         lambda x: pycountry.countries.get(alpha_2=x).alpha_3
     )
   
-    fig = px.choropleth(
+    fig1 = px.choropleth(
         df_map,
         locations="iso3",
         color="tsunami",
         locationmode="ISO-3"
     )
 
-    st.plotly_chart(fig, use_container_width=False)
+    fig2 = px.choropleth(df_map, locations="iso3",
+                        color=df_map['Tsunami'],
+                        hover_name="Country/Region",
+                        hover_data=["magnitude", "depth"],
+                        locationmode="ISO-3",
+                        animation_frame='Years',
+                        color_continuous_midpoint = 3,
+    color_continuous_scale=px.colors.sequential.thermal_r)
+    fig.update_layout(margin=dict(l=20,r=0,b=0,t=70,pad=0),paper_bgcolor="white",height= 700,title_text = f"Earthquake & Tsunami's Risk in {country_name}",font_size=18)
+
+    st.plotly_chart(fig1, use_container_width=False)
+    st.plotly_chart(fig2, use_container_width=False)
 
 
 # ---------------------------- Prediction from data ------------------------- #
