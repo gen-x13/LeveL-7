@@ -226,6 +226,8 @@ elif selected == "Estimation":
 
     import pycountry
 
+    df_map = (countries_list.groupby("country", as_index=False).agg({"tsunami": "sum"}))
+
     df_map["iso3"] = df_map["country"].apply(
         lambda x: pycountry.countries.get(alpha_2=x).alpha_3
     )
