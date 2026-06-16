@@ -221,8 +221,16 @@ elif selected == "Estimation":
 
     df_country = countries_list[countries_list["country"] == country_name]
 
-    st.dataframe(countries_list, width="stretch", height="auto")
-    st.dataframe(df_country, width="stretch", height="auto")
+    fig = px.scatter_geo(
+        df_country,
+        lat="latitude",
+        lon="longitude",
+        color="tsunami",
+        hover_name="city",
+        hover_data=["magnitude", "depth", "Year", "Month"]
+    )
+    
+    fig.show()
   
 # ---------------------------- Prediction from data ------------------------- #
     
