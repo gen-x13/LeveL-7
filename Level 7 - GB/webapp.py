@@ -236,36 +236,7 @@ elif selected == "Estimation":
     # Figure 
     tsunami_risk.tsunami_estimation_graph(country=country_name)
 
-    #df_country = countries_list[countries_list["country"] == country_name]
-
-    import pycountry
-
-    df_map = (countries_list.groupby("country", as_index=False).agg({"tsunami": "sum"}))
-
-    df_map["iso3"] = df_map["country"].apply(
-        lambda x: pycountry.countries.get(alpha_2=x).alpha_3
-    )
-  
-    fig1 = px.choropleth(
-        df_map,
-        locations="iso3",
-        color="tsunami",
-        locationmode="ISO-3"
-    )
-
-    fig2 = px.choropleth(df_map, locations="iso3",
-                        color=backg_color,
-                        hover_name="magnitude",
-                        hover_data=["tsunami"],
-                        locationmode="ISO-3",
-                        animation_frame='Years',
-                        color_continuous_midpoint = 3,
-    color_continuous_scale=px.colors.sequential.thermal_r)
-    fig.update_layout(margin=dict(l=20,r=0,b=0,t=70,pad=0),paper_bgcolor="white",height= 700,title_text = f"Earthquake & Tsunami's Risk in {country_name}",font_size=18)
-
-    st.plotly_chart(fig1, use_container_width=False)
-    st.plotly_chart(fig2, use_container_width=False)
-
+    
 
 # ---------------------------- Prediction from data ------------------------- #
     
