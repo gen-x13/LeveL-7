@@ -218,6 +218,8 @@ elif selected == "Estimation":
 
     # Figure 
     tsunami_risk.tsunami_estimation_graph(country=country_name)
+
+    dat = st.dataframe(data, width="stretch", height="auto")
   
 # ---------------------------- Prediction from data ------------------------- #
     
