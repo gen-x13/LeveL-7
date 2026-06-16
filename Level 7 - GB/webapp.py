@@ -233,7 +233,7 @@ elif selected == "Estimation":
         hover_data=["magnitude", "depth", "Year", "Month"]
     )
     
-    fig.show()
+    st.plotly_chart(fig, use_container_width=True)
   
 # ---------------------------- Prediction from data ------------------------- #
     
