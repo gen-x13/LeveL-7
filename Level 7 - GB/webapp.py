@@ -76,6 +76,20 @@ with open(css_path) as f:
     css = f.read()
 st.markdown(f'<style>{css}</style>', unsafe_allow_html=True)
 
+# --------------------- Background Colors -------------------------------- #
+
+# Background Colors for plots
+brig_blue = "rgb(0, 150, 255)"
+coba_blue = "rgb(0, 71, 171)"
+egyp_blue = "rgb(20, 52, 164)"
+neon_blue = "rgb(31, 81, 255)"
+
+# List of the colors
+colors = [brig_blue, coba_blue, egyp_blue, neon_blue]
+
+# Randomization of the color background
+backg_color = random.choice(colors)
+
 # ------------------------------- Loading data --------------------------- #
 
 # Security preventing any reading problem and any cache data problem
@@ -240,7 +254,7 @@ elif selected == "Estimation":
     )
 
     fig2 = px.choropleth(df_map, locations="iso3",
-                        color=blue,
+                        color=backg_color,
                         hover_name="tsunami",
                         hover_data=["magnitude", "depth"],
                         locationmode="ISO-3",
