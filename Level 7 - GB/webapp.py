@@ -240,7 +240,7 @@ elif selected == "Estimation":
     )
 
     fig2 = px.choropleth(df_map, locations="iso3",
-                        color=df_map['Tsunami'],
+                        color=df_map['tsunami'],
                         hover_name="Country/Region",
                         hover_data=["magnitude", "depth"],
                         locationmode="ISO-3",
