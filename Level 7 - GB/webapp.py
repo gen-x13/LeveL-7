@@ -222,19 +222,24 @@ elif selected == "Estimation":
     # Figure 
     tsunami_risk.tsunami_estimation_graph(country=country_name)
 
-    df_country = countries_list[countries_list["country"] == country_name]
+    #df_country = countries_list[countries_list["country"] == country_name]
 
-    fig = px.scatter_geo(
-        df_country,
-        lat="latitude",
-        lon="longitude",
-        color="tsunami",
-        hover_name="city",
-        hover_data=["magnitude", "depth", "Year", "Month"]
+    import pycountry
+
+    df_map["iso3"] = df_map["country"].apply(
+        lambda x: pycountry.countries.get(alpha_2=x).alpha_3
     )
-    
-    st.plotly_chart(fig, use_container_width=True)
   
+    fig = px.choropleth(
+        df_map,
+        locations="iso3",
+        color="tsunami",
+        locationmode="ISO-3"
+    )
+
+    st.plotly_chart(fig, use_container_width=False)
+
+
 # ---------------------------- Prediction from data ------------------------- #
     
 elif selected == "Prediction":
