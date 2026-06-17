@@ -112,6 +112,18 @@ def load_data():
 data = load_data()
 data = data.drop(['nst', 'dmin', 'gap', 'cdi', 'mmi', 'sig'], axis=1)
 
+# Function combining year and month, mapping tsunami with labels
+def year_month(data):
+  
+  data["YearMonth"] = data["Year"].astype(str) + "-" + data["Month"].astype(str).str.zfill(2)
+  data = data.sort_values(by=["Year", "Month"], ascending=True)
+  data = data.sort_values(by=["Year"], ascending=True)
+  
+  # Mapping the tsunami column with labels
+  data["tsunami_label"] = data["tsunami"].map({0: "No", 1: "Yes"})
+
+  return data
+
 # ---------------------------------- Cache ---------------------------------- #
 
 # For every object : st.cache_resource -> avoid problems with cache later
@@ -237,11 +249,11 @@ elif selected == "Estimation":
     tsunami_risk.tsunami_estimation_graph(country=country_name)
 
     df_country = countries_list[countries_list["country"] == country_name]
-
+    df_country = year_month(df_country)
     st.dataframe(df_country)
 
     #fig = px.bar(df_country, x="magnitude", y="depth", color="tsunami", animation_frame="year", animation_group="country", range_y=[0,4000000000])
-    st.plotly_chart(fig)
+    #st.plotly_chart(fig)
     
 
 # ---------------------------- Prediction from data ------------------------- #
