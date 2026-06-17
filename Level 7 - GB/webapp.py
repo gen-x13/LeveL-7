@@ -236,7 +236,7 @@ elif selected == "Estimation":
     # Figure 
     tsunami_risk.tsunami_estimation_graph(country=country_name)
 
-    df_country = countries_list[countries_list["country"] == country]
+    df_country = countries_list[countries_list["country"] == country_name]
 
     fig = px.density_map(df_country, lat='latitude', lon='longitude', z='magnitude', radius=10,
                         #center=dict(lat=0, lon=180), zoom=0,
