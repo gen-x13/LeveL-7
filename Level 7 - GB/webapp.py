@@ -252,8 +252,8 @@ elif selected == "Estimation":
     df_country = year_month(df_country)
     st.dataframe(df_country)
 
-    #fig = px.bar(df_country, x="magnitude", y="depth", color="tsunami", animation_frame="year", animation_group="country", range_y=[0,4000000000])
-    #st.plotly_chart(fig)
+    fig = px.bar(df_country, x="magnitude", y="depth", color="tsunami", animation_frame="year", animation_group="city")
+    st.plotly_chart(fig)
     
 
 # ---------------------------- Prediction from data ------------------------- #
