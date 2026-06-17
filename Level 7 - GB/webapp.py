@@ -238,9 +238,9 @@ elif selected == "Estimation":
 
     df_country = countries_list[countries_list["country"] == country_name]
 
-    fig = px.density_map(df_country, lat='latitude', lon='longitude', z='magnitude', radius=100,
-                        #center=dict(lat=0, lon=180), zoom=0,
-                        map_style="open-street-map")
+    st.dataframe(df_country)
+
+    #fig = px.bar(df_country, x="magnitude", y="depth", color="tsunami", animation_frame="year", animation_group="country", range_y=[0,4000000000])
     st.plotly_chart(fig)
     
 
