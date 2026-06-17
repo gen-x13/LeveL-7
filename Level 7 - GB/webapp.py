@@ -250,9 +250,11 @@ elif selected == "Estimation":
 
     df_country = countries_list[countries_list["country"] == country_name]
     df_country = year_month(df_country)
-    st.dataframe(df_country)
+    #st.dataframe(df_country)
 
-    fig = px.bar(df_country, x="magnitude", y="depth", color="tsunami", animation_frame='YearMonth', animation_group="city")
+    #fig = px.scatter(df_country, x="magnitude", y="depth", color="tsunami", animation_frame='YearMonth', animation_group="city")
+    fig = px.scatter(df_country, x="magnitude", y="city", animation_frame="YearMonth", 
+               animation_group="city", size="depth", color="tsunami", hover_name="city")
     st.plotly_chart(fig)
     
 
