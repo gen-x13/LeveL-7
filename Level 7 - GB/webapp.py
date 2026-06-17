@@ -254,7 +254,7 @@ elif selected == "Estimation":
     st.dataframe(df_country)
 
     #fig = px.scatter(df_country, x="magnitude", y="depth", color="tsunami", animation_frame='YearMonth', animation_group="city")
-    fig = px.scatter(df_country, x="magnitude", y="city", #animation_frame="YearMonth", 
+    fig = px.scatter(df_country, x="YearMonth", y="city", #animation_frame="YearMonth", 
                      size="depth", color="tsunami", hover_name="city")
     st.plotly_chart(fig)
     
