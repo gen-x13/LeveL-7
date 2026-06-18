@@ -252,9 +252,8 @@ elif selected == "Estimation":
     
     df_country = year_month(df_country)
     st.dataframe(df_country)
-
-    fig = px.box(df_country, x="YearMonth", y="city", points="all")
-    st.plotly_chart(fig)
+  
+    #st.plotly_chart(fig)
   
 
 # ---------------------------- Prediction from data ------------------------- #
