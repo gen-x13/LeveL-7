@@ -39,7 +39,7 @@ st.set_page_config(page_title="Tsunami Risk Assessment",
 
 selected = option_menu(
     menu_title=None,
-    options=["Mapping", "Estimation", "Prediction", "Early Warning"],
+    options=["Mapping", "Prediction", "Early Warning"], #"Estimation",
     icons=["geo-alt", "bar-chart", "cpu", "bell"],
     orientation="horizontal",
     styles={
