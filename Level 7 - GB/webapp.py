@@ -426,7 +426,7 @@ elif selected == "Early Warning":
             # Dashboard Part
             cols = st.columns(2)
           
-            for index, place in enumerate(dash.places):
+            for index, place in enumerate(model.places):
               
                 col = cols[index % 2] # rotation 0,1
               
