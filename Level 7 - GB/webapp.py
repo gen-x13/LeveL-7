@@ -366,7 +366,7 @@ elif selected == "Early Warning":
     # Title 
     st.title("Tsunami Alert") 
     st.markdown("Select a latitude and a longitude. "
-                "The system analyzes seismic activity within a 2000 km radius (last 24h).") 
+                "The system analyzes seismic activity within a 2000 km radius.") 
     
     # Link to help the user find his latitude and longitude
     st.markdown(f":color[If you need help to find your coordinates, this site will help you : https://latlongdata.com]{{foreground='black'}}")
@@ -384,10 +384,12 @@ elif selected == "Early Warning":
     lon_select = two.text_input("Write a longitude...")
 
     # Choice of time_frame
-    time_frame = three.selectbox("Do you want to see the results for ",
-                                ('now-24hours', 'now-180days', 'now-365days'),
+    time_sel = three.selectbox("Do you want to see the results for ",
+                                ('24 hours', '180 days', '365 days'),
                                   index=None,
                                   placeholder="Select a time frame.")
+
+    time_frame = f"now-{"".join(time_sel.split())}"
     
     # Condition to start the analysis and real-time prediction
     if all(item is not None for item in [lat_select, lon_select, time_frame]):
