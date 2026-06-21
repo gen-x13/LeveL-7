@@ -587,10 +587,10 @@ pd.set_option('display.width', 500)
 # Class containing user input and the functions for prediction
 class TsunamiRiskEW():
     
-    def __init__(self, lat, lon):
+    def __init__(self, lat, lon, time):
         
         # Define the data we need for scraping 
-        self.start_time = 'now-24hours' # 'now-180days' -> historic of 180 days
+        self.start_time = time # 'now-24hours' / 'now-180days' / 'now-365days' -> historic of n days
         self.min_magnitude = 3
         self.latitude = lat
         self.longitude = lon
