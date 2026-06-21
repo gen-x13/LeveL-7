@@ -369,10 +369,10 @@ elif selected == "Early Warning":
                 "The system analyzes seismic activity within a 2000 km radius (last 24h).") 
     
     # Link to help the user find his latitude and longitude
-    st.markdown(f":color[If you need help to find your coordinates, this site will help you : https: //latlongdata.com/]{{foreground='black'}}")
+    st.markdown(f":color[If you need help to find your coordinates, this site will help you : https://latlongdata.com]{{foreground='black'}}")
     
     # Columns to display the features side by side
-    one, two = st.columns(2)
+    one, two, three = st.columns(3)
     
     # Charging the data with elegance
     with st.spinner("Initialization..."):
@@ -382,14 +382,20 @@ elif selected == "Early Warning":
     # Choice of latitude and longitude for the user in a text entry
     lat_select = one.text_input("Write a latitude...")
     lon_select = two.text_input("Write a longitude...")
+
+    # Choice of time_frame
+    time_frame = three.selectbox("Do you want to see the results for ",
+                                ('now-24hours', 'now-180days', 'now-365days'),
+                                  index=None,
+                                  placeholder="Select a time frame.")
     
     # Condition to start the analysis and real-time prediction
-    if lat_select is not None and lon_select is not None:
+    if all(item is not None for item in [lat_select, lon_select, time_frame]):
         
         if st.button("Run Tsunami Early Warning"):
             
             with st.spinner("Analyzing seismic activity..."):
-                model = TsunamiRiskEW(float(lat_select), float(lon_select), 'now-24hours')
+                model = TsunamiRiskEW(float(lat_select), float(lon_select), time_frame)
             
             # Display the results by comparison and threshold
             tsunami_pred = model.result
@@ -423,6 +429,8 @@ elif selected == "Early Warning":
                 result_title = f"Result {index+1}"
                 results = f"""
                            ***{result_title}***
+
+                           **Time Frame** : {time_frame}
                            
                            **Place selected** : {place}
                            
