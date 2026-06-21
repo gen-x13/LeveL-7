@@ -388,8 +388,6 @@ elif selected == "Early Warning":
                                 ('24 hours', '180 days', '365 days'),
                                   index=None,
                                   placeholder="Select a time frame.")
-
-    time_frame = f"now-{"".join(time_sel.split())}"
     
     # Condition to start the analysis and real-time prediction
     if all(item is not None for item in [lat_select, lon_select, time_frame]):
@@ -397,6 +395,7 @@ elif selected == "Early Warning":
         if st.button("Run Tsunami Early Warning"):
             
             with st.spinner("Analyzing seismic activity..."):
+                time_frame = f"now-{"".join(time_sel.split())}"
                 model = TsunamiRiskEW(float(lat_select), float(lon_select), time_frame)
             
             # Display the results by comparison and threshold
