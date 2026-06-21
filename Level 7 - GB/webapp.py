@@ -389,7 +389,7 @@ elif selected == "Early Warning":
         if st.button("Run Tsunami Early Warning"):
             
             with st.spinner("Analyzing seismic activity..."):
-                model = TsunamiRiskEW(float(lat_select), float(lon_select))
+                model = TsunamiRiskEW(float(lat_select), float(lon_select), 'now-24hours')
             
             # Display the results by comparison and threshold
             tsunami_pred = model.result
