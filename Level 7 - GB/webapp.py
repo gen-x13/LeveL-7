@@ -384,7 +384,7 @@ elif selected == "Early Warning":
     lon_select = two.text_input("Write a longitude...")
 
     # Choice of time_frame
-    time_sel = three.selectbox("Do you want to see the results for ",
+    time_sel = three.selectbox("Dashboard results for : ",
                                 ('24 hours', '180 days', '365 days'),
                                   index=None,
                                   placeholder="Select a time frame.")
@@ -396,7 +396,8 @@ elif selected == "Early Warning":
             
             with st.spinner("Analyzing seismic activity..."):
                 time_frame = f"now-{"".join(time_sel.split())}"
-                model = TsunamiRiskEW(float(lat_select), float(lon_select), time_frame)
+                model = TsunamiRiskEW(float(lat_select), float(lon_select), 'now-24hours')
+                dash = TsunamiRiskEW(float(lat_select), float(lon_select), time_frame)
             
             # Display the results by comparison and threshold
             tsunami_pred = model.result
