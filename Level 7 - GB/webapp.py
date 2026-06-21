@@ -390,7 +390,7 @@ elif selected == "Early Warning":
                                   placeholder="Select a time frame.")
     
     # Condition to start the analysis and real-time prediction
-    if all(item is not None for item in [lat_select, lon_select, time_frame]):
+    if all(item is not None for item in [lat_select, lon_select, time_sel]):
         
         if st.button("Run Tsunami Early Warning"):
             
