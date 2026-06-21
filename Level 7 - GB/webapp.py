@@ -398,11 +398,12 @@ elif selected == "Early Warning":
                 time_frame = f"now-{"".join(time_sel.split())}"
                 model = TsunamiRiskEW(float(lat_select), float(lon_select), 'now-24hours')
                 dash = TsunamiRiskEW(float(lat_select), float(lon_select), time_frame)
-            
+
+            # Prediction Part
             # Display the results by comparison and threshold
             tsunami_pred = model.result
             
-            # Display thatb there's no earthquake instead of raising an error
+            # Display that there's no earthquake instead of raising an error
             no_earthquake = model.no_earthquake
             
             # If the variable is true, that means there's no data provided 
@@ -422,9 +423,10 @@ elif selected == "Early Warning":
             else :
                 st.markdown(f":color[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 0, 0)' foreground='black'}}")
 
+            # Dashboard Part
             cols = st.columns(2)
           
-            for index, place in enumerate(model.places):
+            for index, place in enumerate(dash.places):
               
                 col = cols[index % 2] # rotation 0,1
               
@@ -436,11 +438,11 @@ elif selected == "Early Warning":
                            
                            **Place selected** : {place}
                            
-                           **Magnitude** : {model.mags[index]}
+                           **Magnitude** : {dash.mags[index]}
                            
-                           **Depth** : {model.depths[index]}
+                           **Depth** : {dash.depths[index]}
                            
-                           **Hour** : {model.times[index]}
+                           **Hour** : {dash.times[index]}
                           """
                 with col:
                   st.markdown(results, text_alignment="center")
