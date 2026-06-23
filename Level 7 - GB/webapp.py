@@ -441,7 +441,7 @@ elif selected == "Early Warning":
                                    **Hour** : {dash.times[index]}
                                   """
                                   
-                    st.markdown(results, text_alignment="center")
+                        st.markdown(results, text_alignment="center")
                     
             with left:
                 st.caption("🏗 It's still under construction, come back in a few days")
