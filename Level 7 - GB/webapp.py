@@ -398,8 +398,7 @@ elif selected == "Early Warning":
                 time_frame = f"now-{"".join(time_sel.split())}"
                 model = TsunamiRiskEW(float(lat_select), float(lon_select), 'now-24hours')
                 dash = TsunamiRiskEW(float(lat_select), float(lon_select), time_frame)
-
-            # Prediction Part
+            
             # Display the results by comparison and threshold
             tsunami_pred = model.result
             
@@ -413,7 +412,7 @@ elif selected == "Early Warning":
             
             # Traffic light for every state of the probability to have a tsunami
             elif tsunami_pred == 0:
-                st.markdown(":color[🟢 No significant seismic activity detected.]{{background='rgb(9, 121, 105)' foreground='black'}}")
+                st.markdown(":color[🟢 No significant seismic activity detected.]{{background='rgb(9, 121, 105)' foreground='black'}}", text_alignment="center")
             elif tsunami_pred < threshold_green:
                 st.markdown(f":color[🟢 Green Alert  : Low risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(9, 121, 105)' foreground='black'}}", text_alignment="center")
             elif tsunami_pred < threshold_yellow:
@@ -423,27 +422,29 @@ elif selected == "Early Warning":
             else :
                 st.markdown(f":color[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 0, 0)' foreground='black'}}", text_alignment="center")
 
-            # Dashboard Part
-            cols = st.columns(2)
+            left, right = st.columns(2)
           
-            for index, place in enumerate(model.places): #dash
-              
-                col = cols[index % 2] # rotation 0,1
-              
-                result_title = f"Result {index+1}"
-                results = f"""
-                           ***{result_title}***
-                           
-                           **Place selected** : {place}
-                           
-                           **Magnitude** : {dash.mags[index]}
-                           
-                           **Depth** : {dash.depths[index]}
-                           
-                           **Hour** : {dash.times[index]}
-                          """
-                with col:
-                  st.markdown(results, text_alignment="center")
+            with right:
+                with st.expander("Results :"):
+                    for index, place in enumerate(dash.places):
+                      
+                        result_title = f"Result {index+1}"
+                        results = f"""
+                                   ***{result_title}***
+                                   
+                                   **Place selected** : {place}
+                                   
+                                   **Magnitude** : {dash.mags[index]}
+                                   
+                                   **Depth** : {dash.depths[index]}
+                                   
+                                   **Hour** : {dash.times[index]}
+                                  """
+                                  
+                    st.markdown(results, text_alignment="center")
+                    
+            with left:
+                st.caption("🏗 It's still under construction, come back in a few days")
 
       
     else:
