@@ -415,13 +415,13 @@ elif selected == "Early Warning":
             elif tsunami_pred == 0:
                 st.markdown(":color[🟢 No significant seismic activity detected.]{{background='rgb(9, 121, 105)' foreground='black'}}")
             elif tsunami_pred < threshold_green:
-                st.markdown(f":color[🟢 Green Alert  : Low risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(9, 121, 105)' foreground='black'}}")
+                st.markdown(f":color[🟢 Green Alert  : Low risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(9, 121, 105)' foreground='black'}}", text_alignment="center")
             elif tsunami_pred < threshold_yellow:
-                st.markdown(f":color[🟡 Yellow Alert : Moderate risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(223, 255, 0)' foreground='black'}}")
+                st.markdown(f":color[🟡 Yellow Alert : Moderate risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(223, 255, 0)' foreground='black'}}", text_alignment="center")
             elif tsunami_pred < threshold_orange:
-                st.markdown(f":color[🟠 Orange Alert : High risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 170, 0)' foreground='black'}}")
+                st.markdown(f":color[🟠 Orange Alert : High risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 170, 0)' foreground='black'}}", text_alignment="center")
             else :
-                st.markdown(f":color[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 0, 0)' foreground='black'}}")
+                st.markdown(f":color[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 0, 0)' foreground='black'}}", text_alignment="center")
 
             # Dashboard Part
             cols = st.columns(2)
@@ -433,8 +433,6 @@ elif selected == "Early Warning":
                 result_title = f"Result {index+1}"
                 results = f"""
                            ***{result_title}***
-
-                           **Time Frame** : {time_frame}
                            
                            **Place selected** : {place}
                            
