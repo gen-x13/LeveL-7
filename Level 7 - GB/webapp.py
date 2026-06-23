@@ -428,7 +428,7 @@ elif selected == "Early Warning":
                 with st.expander("Results :"):
                     for index, place in enumerate(dash.places):
                       
-                        result_title = f"Result {index+1}"
+                        result_title = f"Result {index}"
                         results = f"""
                                    ***{result_title}***
                                    
@@ -449,9 +449,6 @@ elif selected == "Early Warning":
       
     else:
         st.warning("Select all of your parameters for the prediction.")
-        
-    
-    st.caption("🏗 It's still under construction, come back in a few days")
 
 
 
