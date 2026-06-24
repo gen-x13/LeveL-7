@@ -446,6 +446,18 @@ elif selected == "Early Warning":
                     
             with left:
                 st.caption("🏗 It's still under construction, come back in a few days")
+                # Using object notation
+                add_selectbox = st.sidebar.selectbox(
+                    "How would you like to be contacted?",
+                    ("Email", "Home phone", "Mobile phone")
+                )
+                
+                # Using "with" notation
+                with st.sidebar:
+                    add_radio = st.radio(
+                        "Choose a shipping method",
+                        ("Standard (5-15 days)", "Express (2-5 days)")
+                    )
 
       
     else:
