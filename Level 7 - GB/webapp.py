@@ -427,33 +427,33 @@ elif selected == "Early Warning":
                 st.markdown(f":color[🟠 Orange Alert : High risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 170, 0)' foreground='black'}}", text_alignment="center")
             else :
                 st.markdown(f":color[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 0, 0)' foreground='black'}}", text_alignment="center")
-
-            col1, col2 = st.columns(2)
-
-            with col1:
-                if st.button("Previous"):
-                    st.session_state.current_result = (
-                        st.session_state.current_result - 1
-                    ) % len(dash.places)
-            
-            with col2:
-                if st.button("Next"):
-                    st.session_state.current_result = (
-                        st.session_state.current_result + 1
-                    ) % len(dash.places)
-            
-            index = st.session_state.current_result  
             
             left, right = st.columns([3, 1])
           
             with right:
                 st.subheader("Results :")
+                col1, col2 = st.columns(2)
+
+                with col1:
+                    if st.button("Previous"):
+                        st.session_state.current_result = (
+                            st.session_state.current_result - 1
+                        ) % len(dash.places)
+                
+                with col2:
+                    if st.button("Next"):
+                        st.session_state.current_result = (
+                            st.session_state.current_result + 1
+                        ) % len(dash.places)
+                
+                index = st.session_state.current_result  
+              
                 with st.container(height=300):
                     result_title = f"Result {index}"
                     results = f"""
                                    ***{result_title}***
                                    
-                                   **Place selected** : {place}
+                                   **Place selected** : {dash.places[index]}
                                    
                                    **Magnitude** : {dash.mags[index]}
                                    
