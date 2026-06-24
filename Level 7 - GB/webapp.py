@@ -35,7 +35,8 @@ from tsunami_risk_pred_ew import TsunamiRisk, TsunamiRiskPred, TsunamiRiskEW
 
 # Page Icon, side bar collpase
 st.set_page_config(page_title="Tsunami Risk Assessment", 
-                   initial_sidebar_state="collapsed")
+                   initial_sidebar_state="collapsed",
+                   layout="wide")
 
 selected = option_menu(
     menu_title=None,
