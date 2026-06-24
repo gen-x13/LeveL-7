@@ -68,12 +68,6 @@ selected = option_menu(
     },
 )
 
-# ----------------------- Carroussel ------------------------------------ #
-
-# Initialization 
-if "current_result" not in st.session_state:
-    st.session_state.current_result = 0
-
 # ----------------------- Background ------------------------------------ #
 
 # CSS Background
@@ -432,28 +426,14 @@ elif selected == "Early Warning":
           
             with right:
                 st.subheader("Results :")
-                col1, col2 = st.columns(2)
-
-                with col1:
-                    if st.button("Previous"):
-                        st.session_state.current_result = (
-                            st.session_state.current_result - 1
-                        ) % len(dash.places)
-                
-                with col2:
-                    if st.button("Next"):
-                        st.session_state.current_result = (
-                            st.session_state.current_result + 1
-                        ) % len(dash.places)
-                
-                index = st.session_state.current_result  
-              
                 with st.container(height=300):
-                    result_title = f"Result {index}"
-                    results = f"""
+                    for index, place in enumerate(dash.places):
+                      
+                        result_title = f"Result {index}"
+                        results = f"""
                                    ***{result_title}***
                                    
-                                   **Place selected** : {dash.places[index]}
+                                   **Place selected** : {place}
                                    
                                    **Magnitude** : {dash.mags[index]}
                                    
@@ -462,7 +442,7 @@ elif selected == "Early Warning":
                                    **Hour** : {dash.times[index]}
                                   """
                                   
-                    st.markdown(results, text_alignment="center")
+                        st.markdown(results, text_alignment="center")
                     
             with left:
                 st.caption("🏗 It's still under construction, come back in a few days")
