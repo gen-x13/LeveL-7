@@ -426,7 +426,7 @@ elif selected == "Early Warning":
             left, right = st.columns([3, 1])
           
             with right:
-                with st.expander("Results :", width=30):
+                with st.expander("Results :", height=30):
                     for index, place in enumerate(dash.places):
                       
                         result_title = f"Result {index}"
