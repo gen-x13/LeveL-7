@@ -427,7 +427,7 @@ elif selected == "Early Warning":
           
             with right:
                 st.subheader("Results :")
-                with st.container(height=30):
+                with st.container(height=300):
                     for index, place in enumerate(dash.places):
                       
                         result_title = f"Result {index}"
