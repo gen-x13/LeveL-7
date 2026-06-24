@@ -423,7 +423,7 @@ elif selected == "Early Warning":
             else :
                 st.markdown(f":color[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 0, 0)' foreground='black'}}", text_alignment="center")
 
-            left, right = st.columns(2)
+            left, right = st.columns([3, 1])
           
             with right:
                 with st.expander("Results :"):
