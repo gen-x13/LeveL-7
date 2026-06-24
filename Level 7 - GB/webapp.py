@@ -426,7 +426,7 @@ elif selected == "Early Warning":
             left, right = st.columns([3, 1])
           
             with right:
-                st.subhead("Results :")
+                st.subheader("Results :")
                 with st.container(height=30):
                     for index, place in enumerate(dash.places):
                       
