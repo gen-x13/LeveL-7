@@ -427,26 +427,23 @@ elif selected == "Early Warning":
           
             with right:
                 st.subheader("Results :")
-                
-                for index, place in enumerate(dash.places):
-                        with st.container(height=300):
+                with st.container(height=300):
+                    for index, place in enumerate(dash.places):
                       
-                            result_title = f"Result {index}"
-                            results = f"""
-                                       ***{result_title}***
-                                       
-                                       **Place selected** : {place}
-                                       
-                                       **Magnitude** : {dash.mags[index]}
-                                       
-                                       **Depth** : {dash.depths[index]}
-                                       
-                                       **Hour** : {dash.times[index]}
-                                      """
-                                      
-                            st.markdown(results, text_alignment="center")
-                            
-                        
+                        result_title = f"Result {index}"
+                        results = f"""
+                                   ***{result_title}***
+                                   
+                                   **Place selected** : {place}
+                                   
+                                   **Magnitude** : {dash.mags[index]}
+                                   
+                                   **Depth** : {dash.depths[index]}
+                                   
+                                   **Hour** : {dash.times[index]}
+                                  """
+                                  
+                        st.markdown(results, text_alignment="center")
                     
             with left:
                 st.caption("🏗 It's still under construction, come back in a few days")
