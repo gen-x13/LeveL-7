@@ -442,7 +442,7 @@ elif selected == "Early Warning":
                                                        
                                                        **Hour** : {dash.times[index]}
                                                       """,
-                                              img = None,
+                                              img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-orange-signification-1.jpg",
                                             ),
                         
                         results.append(results_dict)
