@@ -427,27 +427,27 @@ elif selected == "Early Warning":
           
             with right:
                 st.subheader("Results :")
-                #with st.container(height=500):
-                results = []
-                for index, place in enumerate(dash.places):
-                        
-                      results_dict = dict(                      
-                                            title = f"Result {index}",
-                                            text = f"""
-                                                       Place selected : {place}
-                                                       
-                                                       Magnitude : {dash.mags[index]}
-                                                       
-                                                       Depth : {dash.depths[index]}
-                                                       
-                                                       Hour : {dash.times[index]}
-                                                      """,
-                                              img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-orange-signification-1.jpg",
-                                            )
-                        
-                    results.append(results_dict)
-                        
-                    carousel(items=results)
+                with st.container(height=500):
+                  results = []
+                  for index, place in enumerate(dash.places):
+                          
+                        results_dict = dict(                      
+                                              title = f"Result {index}",
+                                              text = f"""
+                                                         Place selected : {place}
+                                                         
+                                                         Magnitude : {dash.mags[index]}
+                                                         
+                                                         Depth : {dash.depths[index]}
+                                                         
+                                                         Hour : {dash.times[index]}
+                                                        """,
+                                                img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-orange-signification-1.jpg",
+                                              )
+                          
+                          results.append(results_dict)
+                          
+                      carousel(items=results)
                     
             with left:
                 st.caption("🏗 It's still under construction, come back in a few days")
