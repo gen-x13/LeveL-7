@@ -434,8 +434,6 @@ elif selected == "Early Warning":
                         results_dict = dict(                      
                                             title = f"Result {index}",
                                             text = f"""
-                                                       ***{result_title}***
-                                                       
                                                        **Place selected** : {place}
                                                        
                                                        **Magnitude** : {dash.mags[index]}
