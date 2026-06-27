@@ -427,11 +427,11 @@ elif selected == "Early Warning":
           
             with right:
                 st.subheader("Results :")
-                with st.container(height=500):
-                    results = []
-                    for index, place in enumerate(dash.places):
+                #with st.container(height=500):
+                results = []
+                for index, place in enumerate(dash.places):
                         
-                        results_dict = dict(                      
+                      results_dict = dict(                      
                                             title = f"Result {index}",
                                             text = f"""
                                                        Place selected : {place}
@@ -445,7 +445,7 @@ elif selected == "Early Warning":
                                               img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-orange-signification-1.jpg",
                                             )
                         
-                        results.append(results_dict)
+                    results.append(results_dict)
                         
                     carousel(items=results)
                     
