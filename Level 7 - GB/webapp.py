@@ -422,27 +422,33 @@ elif selected == "Early Warning":
             else :
                 st.markdown(f":color[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 0, 0)' foreground='black'}}", text_alignment="center")
             
+            from streamlit_carousel import carousel
             left, right = st.columns([3, 1])
           
             with right:
                 st.subheader("Results :")
                 with st.container(height=300):
+                    results = []
                     for index, place in enumerate(dash.places):
-                      
-                        result_title = f"Result {index}"
-                        results = f"""
-                                   ***{result_title}***
-                                   
-                                   **Place selected** : {place}
-                                   
-                                   **Magnitude** : {dash.mags[index]}
-                                   
-                                   **Depth** : {dash.depths[index]}
-                                   
-                                   **Hour** : {dash.times[index]}
-                                  """
-                                  
-                        st.markdown(results, text_alignment="center")
+                        
+                        results_dict = dict(                      
+                                            title = f"Result {index}"
+                                            text = f"""
+                                                       ***{result_title}***
+                                                       
+                                                       **Place selected** : {place}
+                                                       
+                                                       **Magnitude** : {dash.mags[index]}
+                                                       
+                                                       **Depth** : {dash.depths[index]}
+                                                       
+                                                       **Hour** : {dash.times[index]}
+                                                      """
+                                            ),
+                        
+                        results.append(results_dict)
+                        
+                    carousel(items=results)
                     
             with left:
                 st.caption("🏗 It's still under construction, come back in a few days")
