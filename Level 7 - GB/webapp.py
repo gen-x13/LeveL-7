@@ -442,6 +442,7 @@ elif selected == "Early Warning":
                                                        
                                                        **Hour** : {dash.times[index]}
                                                       """,
+                                              img = None,
                                             ),
                         
                         results.append(results_dict)
