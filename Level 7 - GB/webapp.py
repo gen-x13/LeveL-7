@@ -446,7 +446,7 @@ elif selected == "Early Warning":
                     
                     results.append(results_dict)
                     
-                carousel(items=results)
+                carousel(items=results, width=350,)
                     
             with left:
                 st.caption("🏗 It's still under construction, come back in a few days")
