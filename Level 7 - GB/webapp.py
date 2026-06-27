@@ -432,7 +432,7 @@ elif selected == "Early Warning":
                     for index, place in enumerate(dash.places):
                         
                         results_dict = dict(                      
-                                            title = f"Result {index}"
+                                            title = f"Result {index}",
                                             text = f"""
                                                        ***{result_title}***
                                                        
@@ -443,7 +443,7 @@ elif selected == "Early Warning":
                                                        **Depth** : {dash.depths[index]}
                                                        
                                                        **Hour** : {dash.times[index]}
-                                                      """
+                                                      """,
                                             ),
                         
                         results.append(results_dict)
