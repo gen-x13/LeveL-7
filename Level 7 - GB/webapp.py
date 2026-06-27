@@ -434,13 +434,13 @@ elif selected == "Early Warning":
                         results_dict = dict(                      
                                             title = f"Result {index}",
                                             text = f"""
-                                                       **Place selected** : {place}
+                                                       Place selected : {place}
                                                        
-                                                       **Magnitude** : {dash.mags[index]}
+                                                       Magnitude : {dash.mags[index]}
                                                        
-                                                       **Depth** : {dash.depths[index]}
+                                                       Depth : {dash.depths[index]}
                                                        
-                                                       **Hour** : {dash.times[index]}
+                                                       Hour : {dash.times[index]}
                                                       """,
                                               img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-orange-signification-1.jpg",
                                             )
