@@ -428,7 +428,7 @@ elif selected == "Early Warning":
                 img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-rouge-signification-1.jpg"
             
             from streamlit_carousel import carousel
-            left, right = st.columns([3, 1])
+            left, right = st.columns([2, 1])
           
             with right:
                 st.subheader("Results :")
