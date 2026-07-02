@@ -409,6 +409,7 @@ elif selected == "Early Warning":
             # within 24 hours data from the USGS API.
             if no_earthquake == True:
                 st.info("No earthquake nor data for this coordinates within 24 hours.")
+                img = "https://agence-communication.re/wp-content/uploads/2023/07/couleur-azur-signification.jpg"
             
             # Traffic light for every state of the probability to have a tsunami
             elif tsunami_pred == 0:
