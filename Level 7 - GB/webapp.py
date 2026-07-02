@@ -413,14 +413,19 @@ elif selected == "Early Warning":
             # Traffic light for every state of the probability to have a tsunami
             elif tsunami_pred == 0:
                 st.markdown(":color[🟢 No significant seismic activity detected.]{{background='rgb(9, 121, 105)' foreground='black'}}", text_alignment="center")
+                img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-verte-signification-1.jpg"
             elif tsunami_pred < threshold_green:
                 st.markdown(f":color[🟢 Green Alert  : Low risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(9, 121, 105)' foreground='black'}}", text_alignment="center")
+                img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-verte-signification-1.jpg"
             elif tsunami_pred < threshold_yellow:
                 st.markdown(f":color[🟡 Yellow Alert : Moderate risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(223, 255, 0)' foreground='black'}}", text_alignment="center")
+                img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-jaune-signification-1.jpg"
             elif tsunami_pred < threshold_orange:
                 st.markdown(f":color[🟠 Orange Alert : High risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 170, 0)' foreground='black'}}", text_alignment="center")
+                img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-orange-signification-1.jpg"
             else :
                 st.markdown(f":color[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 0, 0)' foreground='black'}}", text_alignment="center")
+                img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-rouge-signification-1.jpg"
             
             from streamlit_carousel import carousel
             left, right = st.columns([3, 1])
@@ -441,7 +446,7 @@ elif selected == "Early Warning":
                                                    
                                                    Hour : {dash.times[index]}
                                                   """,
-                                        img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-orange-signification-1.jpg"
+                                        img = img,
                                         )
                     
                     results.append(results_dict)
