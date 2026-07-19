@@ -428,35 +428,27 @@ elif selected == "Early Warning":
                 st.markdown(f":color[🔴 Red Alert : Critical risk of tsunami. Percentage : {tsunami_pred*100:.1f} %]{{background='rgb(255, 0, 0)' foreground='black'}}", text_alignment="center")
                 img = "https://agence-communication.re/wp-content/uploads/2023/06/couleur-rouge-signification-1.jpg"
             
-            from streamlit_carousel import carousel
-            left, right = st.columns([2, 1])
-          
-            with right:
-                st.subheader("Results :")
-                #with st.container(height=500):
-                results = []
-                for index, place in enumerate(dash.places):
+            st.subheader("Results :", text_alignment="center")
+            #with st.container(height=500):
+            results = []
+            for index, place in enumerate(dash.places):
                     
-                    results_dict = dict(                      
-                                        title = f"Result {index}",
-                                        text = f"""Place selected : {place}
+                  results_dict = dict(                      
+                                      title = f"Result {index}",
+                                      text = f"""Place selected : {place}
                                                    
-                                                   Magnitude : {dash.mags[index]}
+                                                 Magnitude : {dash.mags[index]}
                                                    
-                                                   Depth : {dash.depths[index]}
+                                                 Depth : {dash.depths[index]}
                                                    
-                                                   Hour : {dash.times[index]}
+                                                  Hour : {dash.times[index]}
                                                   """,
                                         img = img,
                                         )
                     
                     results.append(results_dict)
+                    st.markdown(results)
                     
-                carousel(items=results, width=50)
-                    
-            with left:
-                st.caption("🏗 It's still under construction, come back in a few days")
-                
       
     else:
         st.warning("Select all of your parameters for the prediction.")
