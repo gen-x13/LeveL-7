@@ -446,8 +446,8 @@ elif selected == "Early Warning":
                                         img = img,
                                         )
                     
-                    results.append(results_dict)
-                    st.markdown(results)
+                  results.append(results_dict)
+                  st.markdown(results)
                     
       
     else:
