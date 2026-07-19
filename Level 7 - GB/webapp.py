@@ -218,7 +218,7 @@ if selected == "Mapping":
         # Figure
         map_maker = get_mapping(data)
         st.plotly_chart(map_maker.fig_depth_month)
-
+"""
 # ---------------------------- Estimation from data ------------------------- #
 
 elif selected == "Estimation":
@@ -252,10 +252,7 @@ elif selected == "Estimation":
     
     df_country = year_month(df_country)
     st.dataframe(df_country)
-  
-    #st.plotly_chart(fig)
-  
-
+"""
 # ---------------------------- Prediction from data ------------------------- #
     
 elif selected == "Prediction":
@@ -347,14 +344,7 @@ elif selected == "Prediction":
 # ---------------------------- Early Warn from data ------------------------- #
 
 elif selected == "Early Warning": 
-    
-    # Utilisation d'une API pour des données en temps réelles
-    # Sans que l'utilisateur n'ait à rentrer des données, il sélectionne
-    # son pays puis observe !
 
-    # en utilisant une API ! 
-    # Chacun pourrait voir où il se trouve et s'il y a un risque !
-    
     # API used : USGS GEOJSON
 
     # Init threshold
