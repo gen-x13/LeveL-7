@@ -252,7 +252,7 @@ elif selected == "Estimation":
     
     df_country = year_month(df_country)
     st.dataframe(df_country)
-"""
+    """
 # ---------------------------- Prediction from data ------------------------- #
     
 elif selected == "Prediction":
