@@ -218,7 +218,7 @@ if selected == "Mapping":
         # Figure
         map_maker = get_mapping(data)
         st.plotly_chart(map_maker.fig_depth_month)
-"""
+        """
 # ---------------------------- Estimation from data ------------------------- #
 
 elif selected == "Estimation":
